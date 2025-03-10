@@ -1,0 +1,36 @@
+[project]
+name = "RxInferClient"
+version = "0.0.1"
+authors = [
+  { name="Lazy Dynamics", email="info@lazydynamics.com" },
+]
+description = "The official Python library for the RxInfer API"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+  "Typing :: Typed",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: Apache Software License"
+]
+license = "Apache-2.0"
+license-files = ["LICENCSE"]
+dependencies = [
+  "niquests"
+]
+
+[project.optional-dependencies]
+dev = [
+  "hatchling",
+  "mypy"
+]
+
+[project.urls]
+Homepage = "https://github.com/lazydynamics/RxInferClient.py"
+Repository = "https://github.com/lazydynamics/RxInferClient.py"
+Issues = "https://github.com/lazydynamics/RxInferClient.py/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
