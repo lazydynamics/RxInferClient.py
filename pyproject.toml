@@ -17,6 +17,7 @@ classifiers = [
 license = "Apache-2.0"
 license-files = ["LICENCSE"]
 dependencies = [
+  "niquests"
 ]
 
 [project.optional-dependencies]
