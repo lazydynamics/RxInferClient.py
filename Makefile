@@ -47,7 +47,8 @@ help:
 # Variables
 OPENAPI_SPEC_URL := https://raw.githubusercontent.com/lazydynamics/RxInferServer/main/openapi/spec.yaml
 TEMP_DIR := .temp
-GENERATED_DIR := src/rxinferclient/openapi
+GENERATED_DIR := src
+PKGNAME := rxinferclient
 
 ## Install development dependencies
 install-dev:
@@ -66,12 +67,13 @@ generate-client:
 		-i /local/$(TEMP_DIR)/spec.yaml \
 		-g python \
 		-o /local/$(GENERATED_DIR) \
-		--package-name openapi \
-		--additional-properties=projectName=openapi \
 		--additional-properties=packageVersion=1.0.0 \
-		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py
+		--additional-properties=packageName=$(PKGNAME) \
+		--additional-properties=library=asyncio \
+		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py \
 		--additional-properties=generateSourceCodeOnly=true
-	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" $(GENERATED_DIR)/docs/*.md && rm $(GENERATED_DIR)/docs/*.bak
+	@echo "${GREEN}Renaming README.md file...${RESET}"
+	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" $(GENERATED_DIR)/$(PKGNAME)/docs/*.md && rm $(GENERATED_DIR)/$(PKGNAME)/docs/*.bak
 	@rm -rf $(TEMP_DIR)
 	@echo "${GREEN}Client code generated successfully!${RESET}"
 
