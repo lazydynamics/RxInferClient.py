@@ -390,6 +390,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#client-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
       Documentation
@@ -1286,6 +1304,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#client-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
       Documentation
@@ -1348,7 +1384,37 @@
 <li>Type hints for better IDE support</li>
 <li>Comprehensive documentation</li>
 <li>Built on top of OpenAPI specification</li>
+<li>Automatic API key generation</li>
+<li>Configurable server URL</li>
+<li>Organized functionality through logical subfields</li>
 </ul>
+<h2 id="client-structure">Client Structure<a class="headerlink" href="#client-structure" title="Permanent link">&para;</a></h2>
+<p>The client functionality is organized into several subfields:
+- <code>server</code>: Access to server-related operations (e.g., ping, health checks)
+- <code>authentication</code>: Authentication and token management
+- <code>models</code>: Model management and operations (create, delete, etc.)</p>
+<h2 id="quick-examples">Quick Examples<a class="headerlink" href="#quick-examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">RxInferClient</span>
+
+<span class="c1"># Initialize with default settings</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">RxInferClient</span><span class="p">()</span>
+
+<span class="c1"># Or with custom server URL</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">RxInferClient</span><span class="p">(</span><span class="n">server_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8000/v1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check server status</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">ping_server</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;ok&#39;</span>
+
+<span class="c1"># Work with models</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">({</span>
+    <span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BetaBernoulli-v1&quot;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">instance_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">instance_id</span>
+
+<span class="c1"># Clean up</span>
+<span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="o">=</span><span class="n">instance_id</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="installation/">Installation</a> - How to install the client</li>
@@ -1385,7 +1451,7 @@
 
 
 <h2 id="rxinferclient.wrapper.client.RxInferClient" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">RxInferClient</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+              <code class="highlight language-python"><span class="n">RxInferClient</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">server_url</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#rxinferclient.wrapper.client.RxInferClient" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -1396,6 +1462,38 @@
         <p>High-level client for the RxInfer API.</p>
 <p>This class provides a more user-friendly interface to the RxInfer API,
 wrapping the auto-generated client code.</p>
+
+
+<details class="the-client-functionality-is-organized-into-several-subfields" open>
+  <summary>The client functionality is organized into several subfields</summary>
+  <ul>
+<li>server: Access to server-related operations via ServerApi</li>
+<li>authentication: Authentication and token management via AuthenticationApi</li>
+<li>models: Model management and operations via ModelsApi</li>
+</ul>
+</details>
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Initialize the client (will auto-generate API key if not provided):</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">RxInferClient</span><span class="p">()</span>
+</code></pre></div>
+    <p>Initialize with custom server URL:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">RxInferClient</span><span class="p">(</span><span class="n">server_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8000/v1&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <p>Check server status:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">ping_server</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;ok&#39;</span>
+</code></pre></div>
+    <p>Create and manage model instances:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a new model instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BetaBernoulli-v1&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">instance_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">instance_id</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Delete the model instance when done</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="o">=</span><span class="n">instance_id</span><span class="p">)</span>
+</code></pre></div>
 
         <p>Initialize the RxInfer client.</p>
 
@@ -1416,6 +1514,27 @@ wrapping the auto-generated client code.</p>
               <div class="doc-md-description">
                 <p>Optional API key for authentication. If not provided,
     the client will attempt to generate a temporary API key.</p>
+              </div>
+              <p>
+                  <span class="doc-param-annotation">
+                    <b>TYPE:</b>
+                      <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+                  </span>
+                  <span class="doc-param-default">
+                    <b>DEFAULT:</b>
+                      <code>None</code>
+                  </span>
+              </p>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>server_url</code>
+            </td>
+            <td class="doc-param-details">
+              <div class="doc-md-description">
+                <p>Optional server URL. If provided, overrides the default
+       server URL configuration.</p>
               </div>
               <p>
                   <span class="doc-param-annotation">
