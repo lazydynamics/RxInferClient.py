@@ -71,14 +71,15 @@ jobs:
     - name: Build RxInferServer
       uses: julia-actions/julia-buildpkg@v1
     
-    - name: Start RxInferServer in background
+    - name: Start RxInferServer in background and execute tests
       run: |
         cd RxInferServer
+
         make dev &
+
         cd ..
-    
-    - name: Run tests
-      run: make test
+        
+        make test
 
   docs:
     runs-on: ubuntu-latest
