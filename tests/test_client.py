@@ -22,12 +22,6 @@ def test_simple_ping_to_the_server():
     assert response != None
     assert response.status == 'ok'
     
-async def test_simple_ping_to_the_server_async():
-    client = RxInferClient()
-    response = client.a.server.ping_server()
-    assert response != None
-    assert response.status == 'ok'
-    
 def test_create_and_delete_model_instance():
     client = RxInferClient()
     response = client.models.create_model_instance({

@@ -8,6 +8,27 @@ A Python client for interacting with RxInfer, a probabilistic programming framew
 
 RxInferClient provides a simple and intuitive interface to work with RxInfer from Python. It allows you to define models, run inference, and process results with a clean API.
 
+### Quickstart
+
+```python
+from rxinferclient import RxInferClient
+
+client = RxInferClient()
+
+# Ping the server to check if it's running
+response = client.server.ping_server()
+print(response)
+
+# Create a model instance
+response = client.models.create_model_instance({ 
+    "model_name": "BetaBernoulli-v1"
+})
+instance_id = response.instance_id
+
+# Delete the model instance
+client.models.delete_model_instance(instance_id=instance_id)
+```
+
 ## Installation
 
 ```bash
