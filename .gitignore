@@ -117,3 +117,4 @@ dmypy.json
 # Extra project specific files
 .temp
 **/.DS_Store
+**/*.bak
