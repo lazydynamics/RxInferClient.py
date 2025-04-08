@@ -42,8 +42,6 @@ plugins:
             docstring_style: google
             docstring_section_style: spacy
             merge_init_into_class: true
-          selection:
-            docstring_style: google
           setup_commands:
             - import sys
             - sys.path.append(".")
