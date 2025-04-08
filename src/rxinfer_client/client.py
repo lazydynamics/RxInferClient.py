@@ -1,5 +1,4 @@
 
-
 from typing import Optional
 from rxinfer_openapi import ApiClient
 
@@ -21,11 +20,3 @@ class RxInferClient:
         """
         self._api_client = ApiClient()
         self._api_client.configuration.access_token = api_key
-        
-    def ping(self) -> bool:
-        """Check if the server is responding.
-        
-        Returns:
-            bool: True if the server is responding, False otherwise.
-        """
-        return self._api_client.ping()
