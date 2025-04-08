@@ -30,7 +30,6 @@ help:
 	@echo ''
 	@echo '${GREEN}Testing commands:${RESET}'
 	@echo '  ${YELLOW}test${RESET}                 Run tests'
-	@echo '  ${YELLOW}test-cov${RESET}             Run tests with coverage report'
 	@echo ''
 	@echo '${GREEN}Documentation commands:${RESET}'
 	@echo '  ${YELLOW}docs${RESET}                 Build the documentation (strict mode)'
@@ -88,11 +87,6 @@ clean:
 test:
 	@echo "${GREEN}Running tests...${RESET}"
 	@pytest tests/
-
-## Run tests with coverage
-test-cov:
-	@echo "${GREEN}Running tests with coverage...${RESET}"
-	@pytest --cov=rxinfer_client tests/
 
 ## Build documentation
 docs:

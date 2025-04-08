@@ -59,4 +59,3 @@ build-backend = "hatchling.build"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-addopts = "-v --cov=rxinfer_client --cov-report=term-missing"
