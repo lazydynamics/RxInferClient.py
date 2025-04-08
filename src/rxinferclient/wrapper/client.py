@@ -1,6 +1,10 @@
 
 from typing import Optional
+
 from rxinferclient.api_client import ApiClient
+from rxinferclient.api.authentication_api import AuthenticationApi
+from rxinferclient.api.server_api import ServerApi
+from rxinferclient.api.models_api import ModelsApi
 
 class RxInferClient:
     """High-level client for the RxInfer API.
@@ -20,3 +24,7 @@ class RxInferClient:
         """
         self._api_client = ApiClient()
         self._api_client.configuration.access_token = api_key
+        
+        self.server = ServerApi(self._api_client)
+        self.authentication = AuthenticationApi(self._api_client)
+        self.models = ModelsApi(self._api_client)

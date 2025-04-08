@@ -54,8 +54,28 @@ jobs:
         python-version: '3.9'
         cache: 'pip'
     
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: make install-dev
+    
+    - name: Set up Julia
+      uses: julia-actions/setup-julia@v2
+    
+    - name: Cache Julia packages
+      uses: julia-actions/cache@v2
+    
+    - name: Clone RxInferServer
+      run: |
+        git clone https://github.com/lazydynamics/RxInferServer.git
+        cd RxInferServer
+    
+    - name: Build RxInferServer
+      uses: julia-actions/julia-buildpkg@v1
+    
+    - name: Start RxInferServer in background
+      run: |
+        cd RxInferServer
+        make dev &
+        cd ..
     
     - name: Run tests
       run: make test

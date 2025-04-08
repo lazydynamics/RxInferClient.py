@@ -33,6 +33,7 @@ dev = [
   "pytest",
   "pytest-cov",
   "pytest-mock",
+  "pytest-asyncio",
   "black",
   "isort",
   "mkdocs",
@@ -41,7 +42,8 @@ dev = [
   "mkdocs-gen-files",
   "mkdocs-literate-nav",
   "mkdocs-render-swagger-plugin",
-  "pymdown-extensions"
+  "pymdown-extensions",
+  "tenacity"
 ]
 
 [project.urls]
@@ -59,3 +61,6 @@ build-backend = "hatchling.build"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+asyncio_mode = "auto"
+addopts = "-s"
+
