@@ -6,8 +6,9 @@ on:
       - "v*"  # Trigger on version tags
 
 permissions:
-  contents: read
+  contents: write  # Changed from read to write to allow creating releases
   id-token: write  # IMPORTANT: this permission is needed for OIDC publishing
+  pull-requests: write  # Added to allow PR operations
 
 jobs:
   publish:
