@@ -21,6 +21,9 @@ help:
 	@echo ''
 	@echo 'RxInferClient.py Makefile ${YELLOW}targets${RESET}:'
 	@echo ''
+	@echo '${GREEN}Development setup:${RESET}'
+	@echo '  ${YELLOW}install-dev${RESET}          Install development dependencies (required before using other commands)'
+	@echo ''
 	@echo '${GREEN}Client generation commands:${RESET}'
 	@echo '  ${YELLOW}generate-client${RESET}      Generate Python client code from OpenAPI spec'
 	@echo '  ${YELLOW}clean${RESET}                Clean generated files'
@@ -34,11 +37,11 @@ help:
 	@echo '  ${YELLOW}docs-serve${RESET}           Serve documentation locally'
 	@echo '  ${YELLOW}docs-clean${RESET}           Clean documentation build'
 	@echo ''
-	@echo '${GREEN}Development commands:${RESET}'
-	@echo '  ${YELLOW}install-dev${RESET}          Install development dependencies'
-	@echo ''
 	@echo '${GREEN}Help:${RESET}'
 	@echo '  ${YELLOW}help${RESET}                 Show this help message'
+	@echo ''
+	@echo '${YELLOW}Note:${RESET} Run ${GREEN}make install-dev${RESET} first to install all required dependencies.'
+	@echo '      Run it again if you modify any dependencies in pyproject.toml.'
 	@echo ''
 
 # Variables
@@ -49,6 +52,7 @@ GENERATED_DIR := openapi/client
 ## Install development dependencies
 install-dev:
 	@echo "${GREEN}Installing development dependencies...${RESET}"
+	@python -m pip install --upgrade pip
 	@pip install -e ".[dev]"
 	@echo "${GREEN}Development dependencies installed successfully!${RESET}"
 

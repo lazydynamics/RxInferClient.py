@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup:
+  openapi-client-generation:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -18,32 +18,7 @@ jobs:
         cache: 'pip'
     
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -e ".[dev]"
-    
-    - name: Upload setup artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: python-dependencies
-        path: |
-          venv/
-          .venv/
-          **/__pycache__/
-          **/*.pyc
-        retention-days: 1
-
-  openapi-client-generation:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Download setup artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: python-dependencies
-        path: .
+      run: make install-dev
     
     - name: Verify OpenAPI client generation
       run: |
@@ -59,31 +34,35 @@ jobs:
         fi
 
   test:
-    needs: setup
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     
-    - name: Download setup artifacts
-      uses: actions/download-artifact@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        name: python-dependencies
-        path: .
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: make install-dev
     
     - name: Run tests
       run: make test
 
   docs:
-    needs: setup
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     
-    - name: Download setup artifacts
-      uses: actions/download-artifact@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        name: python-dependencies
-        path: .
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: make install-dev
     
     - name: Build documentation
       run: make docs
