@@ -74,11 +74,12 @@ jobs:
     - name: Start RxInferServer in background and execute tests
       run: |
         cd RxInferServer
-
+      
+        make docker
         make dev &
 
         cd ..
-        
+
         make test
 
   docs:

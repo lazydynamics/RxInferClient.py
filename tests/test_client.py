@@ -21,3 +21,11 @@ async def test_simple_ping_to_the_server():
     response = await client.server.ping_server()
     assert response != None
     assert response.status == 'ok'
+    
+async def test_create_model_instance():
+    client = RxInferClient(api_key="dev-token")
+    response = await client.models.create_model_instance({
+        "model_name": "BetaBernoulli-v1",
+    })
+    assert response != None
+    assert response.instance_id != None
