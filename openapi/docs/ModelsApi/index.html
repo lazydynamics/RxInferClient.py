@@ -1,0 +1,3173 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python client for the RxInfer API">
+      
+      
+        <meta name="author" content="Lazy Dynamics">
+      
+      
+        <link rel="canonical" href="https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ModelsApi/">
+      
+      
+        <link rel="prev" href="../ModelInstanceState/">
+      
+      
+        <link rel="next" href="../NotFoundResponse/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>rxinfer_openapi.ModelsApi - RxInfer Client</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rxinfer_openapimodelsapi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RxInfer Client" class="md-header__button md-logo" aria-label="RxInfer Client" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RxInfer Client
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              rxinfer_openapi.ModelsApi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lazydynamics/RxInferClient.py" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lazydynamics/RxInferClient.py
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../swagger-ui/" class="md-tabs__link">
+          
+  
+  
+  OpenAPI Specification
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RxInfer Client" class="md-nav__button md-logo" aria-label="RxInfer Client" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RxInfer Client
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lazydynamics/RxInferClient.py" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lazydynamics/RxInferClient.py
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    OpenAPI Specification
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            OpenAPI Specification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../swagger-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Swagger UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttachEventsToEpisodeRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AttachEventsToEpisodeRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttachEventsToEpisodeRequestEventsInner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AttachEventsToEpisodeRequestEventsInner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttachMetadataToEventRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AttachMetadataToEventRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    rxinfer_openapi.AuthenticationApi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AvailableModel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AvailableModel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AvailableModelDetails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AvailableModelDetails
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CreateEpisodeRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CreateEpisodeRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CreateModelInstanceRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CreateModelInstanceRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CreateModelInstanceResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CreateModelInstanceResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeleteModelInstanceRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeleteModelInstanceRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EpisodeInfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EpisodeInfo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ErrorResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ErrorResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InferRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    InferRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InferResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    InferResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LearnRequest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LearnRequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LearnResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LearnResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModelInstance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ModelInstance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModelInstanceParameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ModelInstanceParameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModelInstanceState/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ModelInstanceState
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    rxinfer_openapi.ModelsApi
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NotFoundResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NotFoundResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PingResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PingResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServerApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    rxinfer_openapi.ServerApi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServerInfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ServerInfo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SuccessResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SuccessResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TokenGenerateResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TokenGenerateResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TokenRolesResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TokenRolesResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UnauthorizedResponse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UnauthorizedResponse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rxinfer_openapimodelsapi">rxinfer_openapi.ModelsApi<a class="headerlink" href="#rxinfer_openapimodelsapi" title="Permanent link">&para;</a></h1>
+<p>All URIs are relative to <em>http://localhost:8000/v1</em></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>HTTP request</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./#attach_events_to_episode"><strong>attach_events_to_episode</strong></a></td>
+<td><strong>POST</strong> /models/i/{instance_id}/episodes/{episode_name}/attach-events</td>
+<td>Attach events to an episode</td>
+</tr>
+<tr>
+<td><a href="./#attach_metadata_to_event"><strong>attach_metadata_to_event</strong></a></td>
+<td><strong>POST</strong> /models/i/{instance_id}/episodes/{episode_name}/events/{event_id}/attach-metadata</td>
+<td>Attach metadata to an event</td>
+</tr>
+<tr>
+<td><a href="./#create_episode"><strong>create_episode</strong></a></td>
+<td><strong>POST</strong> /models/i/{instance_id}/create-episode</td>
+<td>Create a new episode for a model instance</td>
+</tr>
+<tr>
+<td><a href="./#create_model_instance"><strong>create_model_instance</strong></a></td>
+<td><strong>POST</strong> /models/create-instance</td>
+<td>Create a new model instance</td>
+</tr>
+<tr>
+<td><a href="./#delete_episode"><strong>delete_episode</strong></a></td>
+<td><strong>DELETE</strong> /models/i/{instance_id}/episodes/{episode_name}</td>
+<td>Delete an episode for a model</td>
+</tr>
+<tr>
+<td><a href="./#delete_model_instance"><strong>delete_model_instance</strong></a></td>
+<td><strong>DELETE</strong> /models/i/{instance_id}</td>
+<td>Delete a model instance</td>
+</tr>
+<tr>
+<td><a href="./#get_available_model"><strong>get_available_model</strong></a></td>
+<td><strong>GET</strong> /models/available/{model_name}</td>
+<td>Get information about a specific model available for creation</td>
+</tr>
+<tr>
+<td><a href="./#get_available_models"><strong>get_available_models</strong></a></td>
+<td><strong>GET</strong> /models/available</td>
+<td>Get models available for creation</td>
+</tr>
+<tr>
+<td><a href="./#get_episode_info"><strong>get_episode_info</strong></a></td>
+<td><strong>GET</strong> /models/i/{instance_id}/episodes/{episode_name}</td>
+<td>Get episode information</td>
+</tr>
+<tr>
+<td><a href="./#get_episodes"><strong>get_episodes</strong></a></td>
+<td><strong>GET</strong> /models/i/{instance_id}/episodes</td>
+<td>Get all episodes for a model instance</td>
+</tr>
+<tr>
+<td><a href="./#get_model_instance"><strong>get_model_instance</strong></a></td>
+<td><strong>GET</strong> /models/i/{instance_id}</td>
+<td>Get model instance information</td>
+</tr>
+<tr>
+<td><a href="./#get_model_instance_parameters"><strong>get_model_instance_parameters</strong></a></td>
+<td><strong>GET</strong> /models/i/{instance_id}/parameters</td>
+<td>Get the parameters of a model instance</td>
+</tr>
+<tr>
+<td><a href="./#get_model_instance_state"><strong>get_model_instance_state</strong></a></td>
+<td><strong>GET</strong> /models/i/{instance_id}/state</td>
+<td>Get the state of a model instance</td>
+</tr>
+<tr>
+<td><a href="./#get_model_instances"><strong>get_model_instances</strong></a></td>
+<td><strong>GET</strong> /models/instances</td>
+<td>Get all created model instances</td>
+</tr>
+<tr>
+<td><a href="./#run_inference"><strong>run_inference</strong></a></td>
+<td><strong>POST</strong> /models/i/{instance_id}/infer</td>
+<td>Run inference</td>
+</tr>
+<tr>
+<td><a href="./#run_learning"><strong>run_learning</strong></a></td>
+<td><strong>POST</strong> /models/i/{instance_id}/learn</td>
+<td>Learn from previous observations</td>
+</tr>
+<tr>
+<td><a href="./#wipe_episode"><strong>wipe_episode</strong></a></td>
+<td><strong>POST</strong> /models/i/{instance_id}/episodes/{episode_name}/wipe</td>
+<td>Wipe all events from an episode</td>
+</tr>
+</tbody>
+</table>
+<h1 id="attach_events_to_episode"><strong>attach_events_to_episode</strong><a class="headerlink" href="#attach_events_to_episode" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>SuccessResponse attach_events_to_episode(instance_id, episode_name, attach_events_to_episode_request)</p>
+</blockquote>
+<p>Attach events to an episode</p>
+<p>Attach events to a specific episode for a model</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.attach_events_to_episode_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">AttachEventsToEpisodeRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to attach events to</span>
+    <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to attach events to</span>
+    <span class="n">attach_events_to_episode_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">AttachEventsToEpisodeRequest</span><span class="p">()</span> <span class="c1"># AttachEventsToEpisodeRequest | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Attach events to an episode</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_events_to_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">attach_events_to_episode_request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;attach_events_to_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;attach_events_to_episode: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to attach events to</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>episode_name</strong></td>
+<td><strong>str</strong></td>
+<td>Name of the episode to attach events to</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>attach_events_to_episode_request</strong></td>
+<td><a href="../AttachEventsToEpisodeRequest/"><strong>AttachEventsToEpisodeRequest</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type">Return type<a class="headerlink" href="#return-type" title="Permanent link">&para;</a></h3>
+<p><a href="../SuccessResponse/"><strong>SuccessResponse</strong></a></p>
+<h3 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers">HTTP request headers<a class="headerlink" href="#http-request-headers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details">HTTP response details<a class="headerlink" href="#http-response-details" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully attached events to the episode</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Bad request, e.g. invalid data</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model or episode not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="attach_metadata_to_event"><strong>attach_metadata_to_event</strong><a class="headerlink" href="#attach_metadata_to_event" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>SuccessResponse attach_metadata_to_event(instance_id, episode_name, event_id, attach_metadata_to_event_request)</p>
+</blockquote>
+<p>Attach metadata to an event</p>
+<p>Attach metadata to a specific event for a model</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.attach_metadata_to_event_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">AttachMetadataToEventRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to attach metadata to</span>
+    <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to attach metadata to</span>
+    <span class="n">event_id</span> <span class="o">=</span> <span class="mi">56</span> <span class="c1"># int | ID of the event to attach metadata to</span>
+    <span class="n">attach_metadata_to_event_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">AttachMetadataToEventRequest</span><span class="p">()</span> <span class="c1"># AttachMetadataToEventRequest | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Attach metadata to an event</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_metadata_to_event</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">attach_metadata_to_event_request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;attach_metadata_to_event:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;attach_metadata_to_event: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to attach metadata to</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>episode_name</strong></td>
+<td><strong>str</strong></td>
+<td>Name of the episode to attach metadata to</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>event_id</strong></td>
+<td><strong>int</strong></td>
+<td>ID of the event to attach metadata to</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>attach_metadata_to_event_request</strong></td>
+<td><a href="../AttachMetadataToEventRequest/"><strong>AttachMetadataToEventRequest</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_1">Return type<a class="headerlink" href="#return-type_1" title="Permanent link">&para;</a></h3>
+<p><a href="../SuccessResponse/"><strong>SuccessResponse</strong></a></p>
+<h3 id="authorization_1">Authorization<a class="headerlink" href="#authorization_1" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_1">HTTP request headers<a class="headerlink" href="#http-request-headers_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_1">HTTP response details<a class="headerlink" href="#http-response-details_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully attached metadata to the event</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model or episode not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="create_episode"><strong>create_episode</strong><a class="headerlink" href="#create_episode" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>EpisodeInfo create_episode(instance_id, create_episode_request)</p>
+</blockquote>
+<p>Create a new episode for a model instance</p>
+<p>Create a new episode for a specific model instance.
+Note that the default episode is created automatically when the model instance is created. 
+When a new episode is created, it becomes the current episode for the model instance.</p>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.create_episode_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateEpisodeRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to create episode for</span>
+    <span class="n">create_episode_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">CreateEpisodeRequest</span><span class="p">()</span> <span class="c1"># CreateEpisodeRequest | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create a new episode for a model instance</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">create_episode_request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;create_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;create_episode: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to create episode for</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>create_episode_request</strong></td>
+<td><a href="../CreateEpisodeRequest/"><strong>CreateEpisodeRequest</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_2">Return type<a class="headerlink" href="#return-type_2" title="Permanent link">&para;</a></h3>
+<p><a href="../EpisodeInfo/"><strong>EpisodeInfo</strong></a></p>
+<h3 id="authorization_2">Authorization<a class="headerlink" href="#authorization_2" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_2">HTTP request headers<a class="headerlink" href="#http-request-headers_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_2">HTTP response details<a class="headerlink" href="#http-response-details_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully created episode</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Episode cannot be created, e.g. it already exists</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model instance not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="create_model_instance"><strong>create_model_instance</strong><a class="headerlink" href="#create_model_instance" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>CreateModelInstanceResponse create_model_instance(create_model_instance_request)</p>
+</blockquote>
+<p>Create a new model instance</p>
+<p>Creates a new instance of a model with the specified configuration</p>
+<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.create_model_instance_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateModelInstanceRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.create_model_instance_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateModelInstanceResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">create_model_instance_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">CreateModelInstanceRequest</span><span class="p">()</span> <span class="c1"># CreateModelInstanceRequest | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create a new model instance</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">(</span><span class="n">create_model_instance_request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;create_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;create_model_instance: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>create_model_instance_request</strong></td>
+<td><a href="../CreateModelInstanceRequest/"><strong>CreateModelInstanceRequest</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_3">Return type<a class="headerlink" href="#return-type_3" title="Permanent link">&para;</a></h3>
+<p><a href="../CreateModelInstanceResponse/"><strong>CreateModelInstanceResponse</strong></a></p>
+<h3 id="authorization_3">Authorization<a class="headerlink" href="#authorization_3" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_3">HTTP request headers<a class="headerlink" href="#http-request-headers_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_3">HTTP response details<a class="headerlink" href="#http-response-details_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Model instance created successfully</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing or invalid</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Bad request</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="delete_episode"><strong>delete_episode</strong><a class="headerlink" href="#delete_episode" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>SuccessResponse delete_episode(instance_id, episode_name)</p>
+</blockquote>
+<p>Delete an episode for a model</p>
+<p>Delete a specific episode for a model instance.
+Note that the default episode cannot be deleted, but you can wipe data from it.
+If the deleted episode was the current episode, the default episode will become the current episode.</p>
+<h3 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to delete episode for</span>
+    <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to delete</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Delete an episode for a model</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;delete_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;delete_episode: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to delete episode for</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>episode_name</strong></td>
+<td><strong>str</strong></td>
+<td>Name of the episode to delete</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_4">Return type<a class="headerlink" href="#return-type_4" title="Permanent link">&para;</a></h3>
+<p><a href="../SuccessResponse/"><strong>SuccessResponse</strong></a></p>
+<h3 id="authorization_4">Authorization<a class="headerlink" href="#authorization_4" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_4">HTTP request headers<a class="headerlink" href="#http-request-headers_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_4">HTTP response details<a class="headerlink" href="#http-response-details_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully deleted episode</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Episode cannot be deleted, e.g. it is the default episode</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model or episode not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="delete_model_instance"><strong>delete_model_instance</strong><a class="headerlink" href="#delete_model_instance" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>SuccessResponse delete_model_instance(instance_id)</p>
+</blockquote>
+<p>Delete a model instance</p>
+<p>Delete a specific model instance by its ID</p>
+<h3 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to delete</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Delete a model instance</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;delete_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;delete_model_instance: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to delete</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_5">Return type<a class="headerlink" href="#return-type_5" title="Permanent link">&para;</a></h3>
+<p><a href="../SuccessResponse/"><strong>SuccessResponse</strong></a></p>
+<h3 id="authorization_5">Authorization<a class="headerlink" href="#authorization_5" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_5">HTTP request headers<a class="headerlink" href="#http-request-headers_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_5">HTTP response details<a class="headerlink" href="#http-response-details_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Model successfully deleted</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_available_model"><strong>get_available_model</strong><a class="headerlink" href="#get_available_model" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>AvailableModel get_available_model(model_name)</p>
+</blockquote>
+<p>Get information about a specific model available for creation</p>
+<p>Retrieve detailed information about a specific model available for creation</p>
+<h3 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.available_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">AvailableModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">model_name</span> <span class="o">=</span> <span class="s1">&#39;model_name_example&#39;</span> <span class="c1"># str | Name of the model to retrieve information for (including version identifier if applicable, e.g. \&quot;BetaBernoulli-v1\&quot;)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get information about a specific model available for creation</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_available_model:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_available_model: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>model_name</strong></td>
+<td><strong>str</strong></td>
+<td>Name of the model to retrieve information for (including version identifier if applicable, e.g. \&quot;BetaBernoulli-v1\&quot;)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_6">Return type<a class="headerlink" href="#return-type_6" title="Permanent link">&para;</a></h3>
+<p><a href="../AvailableModel/"><strong>AvailableModel</strong></a></p>
+<h3 id="authorization_6">Authorization<a class="headerlink" href="#authorization_6" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_6">HTTP request headers<a class="headerlink" href="#http-request-headers_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_6">HTTP response details<a class="headerlink" href="#http-response-details_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved model details</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing or invalid</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model cannot be found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_available_models"><strong>get_available_models</strong><a class="headerlink" href="#get_available_models" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>List[AvailableModel] get_available_models()</p>
+</blockquote>
+<p>Get models available for creation</p>
+<p>Retrieve the list of models available for creation for a given token.
+This list specifies names and available arguments for each model.</p>
+<p><strong>Note</strong> The list of available models might differ for different access tokens.
+For example, a token with only the "user" role might not have access to all models.</p>
+<h3 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.available_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">AvailableModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get models available for creation</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_models</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_available_models:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_available_models: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h3>
+<p>This endpoint does not need any parameter.</p>
+<h3 id="return-type_7">Return type<a class="headerlink" href="#return-type_7" title="Permanent link">&para;</a></h3>
+<p><a href="../AvailableModel/"><strong>List[AvailableModel]</strong></a></p>
+<h3 id="authorization_7">Authorization<a class="headerlink" href="#authorization_7" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_7">HTTP request headers<a class="headerlink" href="#http-request-headers_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_7">HTTP response details<a class="headerlink" href="#http-response-details_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved list of models available for creation</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing or invalid</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_episode_info"><strong>get_episode_info</strong><a class="headerlink" href="#get_episode_info" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>EpisodeInfo get_episode_info(instance_id, episode_name)</p>
+</blockquote>
+<p>Get episode information</p>
+<p>Retrieve information about a specific episode of a model</p>
+<h3 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve episode for</span>
+    <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to retrieve</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get episode information</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episode_info</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_episode_info:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_episode_info: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to retrieve episode for</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>episode_name</strong></td>
+<td><strong>str</strong></td>
+<td>Name of the episode to retrieve</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_8">Return type<a class="headerlink" href="#return-type_8" title="Permanent link">&para;</a></h3>
+<p><a href="../EpisodeInfo/"><strong>EpisodeInfo</strong></a></p>
+<h3 id="authorization_8">Authorization<a class="headerlink" href="#authorization_8" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_8">HTTP request headers<a class="headerlink" href="#http-request-headers_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_8">HTTP response details<a class="headerlink" href="#http-response-details_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved episode information</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model or episode not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_episodes"><strong>get_episodes</strong><a class="headerlink" href="#get_episodes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>List[EpisodeInfo] get_episodes(instance_id)</p>
+</blockquote>
+<p>Get all episodes for a model instance</p>
+<p>Retrieve all episodes for a specific model instance</p>
+<h3 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve episodes for</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get all episodes for a model instance</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episodes</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_episodes:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_episodes: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to retrieve episodes for</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_9">Return type<a class="headerlink" href="#return-type_9" title="Permanent link">&para;</a></h3>
+<p><a href="../EpisodeInfo/"><strong>List[EpisodeInfo]</strong></a></p>
+<h3 id="authorization_9">Authorization<a class="headerlink" href="#authorization_9" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_9">HTTP request headers<a class="headerlink" href="#http-request-headers_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_9">HTTP response details<a class="headerlink" href="#http-response-details_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved list of episodes</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_model_instance"><strong>get_model_instance</strong><a class="headerlink" href="#get_model_instance" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ModelInstance get_model_instance(instance_id)</p>
+</blockquote>
+<p>Get model instance information</p>
+<p>Retrieve detailed information about a specific model instance</p>
+<h3 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstance</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve information for</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get model instance information</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_model_instance: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to retrieve information for</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_10">Return type<a class="headerlink" href="#return-type_10" title="Permanent link">&para;</a></h3>
+<p><a href="../ModelInstance/"><strong>ModelInstance</strong></a></p>
+<h3 id="authorization_10">Authorization<a class="headerlink" href="#authorization_10" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_10">HTTP request headers<a class="headerlink" href="#http-request-headers_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_10">HTTP response details<a class="headerlink" href="#http-response-details_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved model information</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_model_instance_parameters"><strong>get_model_instance_parameters</strong><a class="headerlink" href="#get_model_instance_parameters" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ModelInstanceParameters get_model_instance_parameters(instance_id)</p>
+</blockquote>
+<p>Get the parameters of a model instance</p>
+<p>Retrieve the parameters of a specific model instance</p>
+<h3 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance_parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstanceParameters</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get the parameters of a model instance</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_parameters</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance_parameters:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_model_instance_parameters: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_11">Return type<a class="headerlink" href="#return-type_11" title="Permanent link">&para;</a></h3>
+<p><a href="../ModelInstanceParameters/"><strong>ModelInstanceParameters</strong></a></p>
+<h3 id="authorization_11">Authorization<a class="headerlink" href="#authorization_11" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_11">HTTP request headers<a class="headerlink" href="#http-request-headers_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_11">HTTP response details<a class="headerlink" href="#http-response-details_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved model parameters</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Model parameters cannot be retrieved due to internal error</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_model_instance_state"><strong>get_model_instance_state</strong><a class="headerlink" href="#get_model_instance_state" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ModelInstanceState get_model_instance_state(instance_id)</p>
+</blockquote>
+<p>Get the state of a model instance</p>
+<p>Retrieve the state of a specific model instance</p>
+<h3 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance_state</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstanceState</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve state for</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get the state of a model instance</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_state</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance_state:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_model_instance_state: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to retrieve state for</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_12">Return type<a class="headerlink" href="#return-type_12" title="Permanent link">&para;</a></h3>
+<p><a href="../ModelInstanceState/"><strong>ModelInstanceState</strong></a></p>
+<h3 id="authorization_12">Authorization<a class="headerlink" href="#authorization_12" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_12">HTTP request headers<a class="headerlink" href="#http-request-headers_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_12">HTTP response details<a class="headerlink" href="#http-response-details_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved model state. Each model has its own state, which is a dictionary of arbitrary key-value pairs. Check model-specific documentation for more details.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Model state cannot be retrieved due to internal error</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="get_model_instances"><strong>get_model_instances</strong><a class="headerlink" href="#get_model_instances" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>List[ModelInstance] get_model_instances()</p>
+</blockquote>
+<p>Get all created model instances</p>
+<p>Retrieve detailed information about all created model instances for a specific token</p>
+<h3 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstance</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Get all created model instances</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instances</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instances:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;get_model_instances: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h3>
+<p>This endpoint does not need any parameter.</p>
+<h3 id="return-type_13">Return type<a class="headerlink" href="#return-type_13" title="Permanent link">&para;</a></h3>
+<p><a href="../ModelInstance/"><strong>List[ModelInstance]</strong></a></p>
+<h3 id="authorization_13">Authorization<a class="headerlink" href="#authorization_13" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_13">HTTP request headers<a class="headerlink" href="#http-request-headers_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_13">HTTP response details<a class="headerlink" href="#http-response-details_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully retrieved list of created model instances</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing or invalid</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="run_inference"><strong>run_inference</strong><a class="headerlink" href="#run_inference" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>InferResponse run_inference(instance_id, infer_request)</p>
+</blockquote>
+<p>Run inference</p>
+<p>Run inference on a specific model instance</p>
+<h3 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.infer_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.infer_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to run inference on</span>
+    <span class="n">infer_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">InferRequest</span><span class="p">()</span> <span class="c1"># InferRequest | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Run inference</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_inference</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">infer_request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;run_inference:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;run_inference: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to run inference on</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>infer_request</strong></td>
+<td><a href="../InferRequest/"><strong>InferRequest</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_14">Return type<a class="headerlink" href="#return-type_14" title="Permanent link">&para;</a></h3>
+<p><a href="../InferResponse/"><strong>InferResponse</strong></a></p>
+<h3 id="authorization_14">Authorization<a class="headerlink" href="#authorization_14" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_14">HTTP request headers<a class="headerlink" href="#http-request-headers_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_14">HTTP response details<a class="headerlink" href="#http-response-details_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully ran inference on the model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="run_learning"><strong>run_learning</strong><a class="headerlink" href="#run_learning" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>LearnResponse run_learning(instance_id, learn_request)</p>
+</blockquote>
+<p>Learn from previous observations</p>
+<p>Learn from previous episodes for a specific model</p>
+<h3 id="example_15">Example<a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.learn_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">LearnRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.learn_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">LearnResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | </span>
+    <span class="n">learn_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">LearnRequest</span><span class="p">()</span> <span class="c1"># LearnRequest | </span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Learn from previous observations</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_learning</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">learn_request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;run_learning:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;run_learning: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>learn_request</strong></td>
+<td><a href="../LearnRequest/"><strong>LearnRequest</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_15">Return type<a class="headerlink" href="#return-type_15" title="Permanent link">&para;</a></h3>
+<p><a href="../LearnResponse/"><strong>LearnResponse</strong></a></p>
+<h3 id="authorization_15">Authorization<a class="headerlink" href="#authorization_15" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_15">HTTP request headers<a class="headerlink" href="#http-request-headers_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_15">HTTP response details<a class="headerlink" href="#http-response-details_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully ran learning on the model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+<h1 id="wipe_episode"><strong>wipe_episode</strong><a class="headerlink" href="#wipe_episode" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>SuccessResponse wipe_episode(instance_id, episode_name)</p>
+</blockquote>
+<p>Wipe all events from an episode</p>
+<p>Wipe all events from a specific episode for a model</p>
+<h3 id="example_16">Example<a class="headerlink" href="#example_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bearer Authentication (ApiKeyAuth):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
+<span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># The client must configure the authentication and authorization parameters</span>
+<span class="c1"># in accordance with the API server security policy.</span>
+<span class="c1"># Examples for each auth method are provided below, use the example that</span>
+<span class="c1"># satisfies your auth use case.</span>
+
+<span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Enter a context with an instance of the API client</span>
+<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="c1"># Create an instance of the API class</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to wipe episode for</span>
+    <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to wipe</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Wipe all events from an episode</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">wipe_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;wipe_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception when calling ModelsApi-&gt;wipe_episode: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>instance_id</strong></td>
+<td><strong>str</strong></td>
+<td>ID of the model instance to wipe episode for</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>episode_name</strong></td>
+<td><strong>str</strong></td>
+<td>Name of the episode to wipe</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_16">Return type<a class="headerlink" href="#return-type_16" title="Permanent link">&para;</a></h3>
+<p><a href="../SuccessResponse/"><strong>SuccessResponse</strong></a></p>
+<h3 id="authorization_16">Authorization<a class="headerlink" href="#authorization_16" title="Permanent link">&para;</a></h3>
+<p><a href="../../#ApiKeyAuth">ApiKeyAuth</a></p>
+<h3 id="http-request-headers_16">HTTP request headers<a class="headerlink" href="#http-request-headers_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<h3 id="http-response-details_16">HTTP response details<a class="headerlink" href="#http-response-details_16" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Response headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>Successfully wiped episode</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Access token is missing, invalid or has no access to the specific model</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Model or episode not found</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../">[Back to README]</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.tabs.link", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
