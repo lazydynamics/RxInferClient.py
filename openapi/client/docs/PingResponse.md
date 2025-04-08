@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** | Status of the server | [default to 'ok']
+**status** | **str** | Status of the server | default to 'ok'
 
 ## Example
 

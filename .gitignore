@@ -114,4 +114,6 @@ dmypy.json
 *.swp
 *.swo 
 
+# Extra project specific files
 .temp
+**/.DS_Store

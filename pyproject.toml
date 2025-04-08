@@ -35,7 +35,9 @@ dev = [
   "mkdocs-material",
   "mkdocstrings[python]",
   "mkdocs-gen-files",
-  "mkdocs-literate-nav"
+  "mkdocs-literate-nav",
+  "mkdocs-render-swagger-plugin",
+  "pymdown-extensions"
 ]
 
 [project.urls]

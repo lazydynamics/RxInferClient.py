@@ -1,0 +1,1 @@
+!!swagger-http https://raw.githubusercontent.com/lazydynamics/RxInferServer/main/openapi/spec.yaml!!

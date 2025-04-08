@@ -33,7 +33,8 @@ theme:
 
 plugins:
   - search
-  - autorefs
+  - autorefs:
+      resolve_closest: true
   - mkdocstrings:
       handlers:
         python:
@@ -43,16 +44,22 @@ plugins:
             docstring_section_style: spacy
             merge_init_into_class: true
   - literate-nav
+  - render_swagger
 
 nav:
   - Home: index.md
   - Installation: installation.md
   # - Usage: usage.md
   # - API Reference: reference/
+  - OpenAPI Specification: 
+    - Swagger UI: openapi/swagger-ui.md
+    - Overview: openapi/README.md
+    - Reference: openapi/docs/*
   # - Development: development.md
   # - Contributing: contributing.md
 
 markdown_extensions:
+  - attr_list
   - admonition
   - codehilite
   - footnotes
@@ -74,7 +81,8 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde 

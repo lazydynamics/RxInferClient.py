@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | **Dict[str, object]** | Model-specific data to run inference on | 
 **timestamp** | **datetime** | Timestamp of the inference request, used to mark the event in the episode | [optional] 
-**episode_name** | **str** | Name of the episode to run inference on | [optional] [default to 'default']
+**episode_name** | **str** | Name of the episode to run inference on | [optional] default to 'default'
 
 ## Example
 

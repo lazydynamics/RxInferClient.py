@@ -70,6 +70,7 @@ generate-client:
 		--additional-properties=projectName=rxinfer-openapi \
 		--additional-properties=packageVersion=0.1.0 \
 		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py
+	@sed -E -i '' "s/\[default to '([^']*)'\]/default to '\1'/g" openapi/client/docs/*.md
 	@rm -rf $(TEMP_DIR)
 	@echo "${GREEN}Client code generated successfully!${RESET}"
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **server_version** | **str** | The version of the RxInferServer, returns unknown if the version is unknown or hidden | 
 **server_edition** | **str** | The edition of the RxInferServer, as set in RXINFER_EDITION environment variable | 
 **julia_version** | **str** | The version of Julia as presented in VERSION | 
-**api_version** | **str** | The version of the API being used | [default to 'v1']
+**api_version** | **str** | The version of the API being used | default to 'v1'
 
 ## Example
 
