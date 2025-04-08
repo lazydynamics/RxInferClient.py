@@ -26,7 +26,7 @@
     
     
       
-        <title>rxinfer_openapi.AuthenticationApi - RxInfer Client</title>
+        <title>rxinferclient.AuthenticationApi - RxInfer Client</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rxinfer_openapiauthenticationapi" class="md-skip">
+        <a href="#rxinferclientauthenticationapi" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              rxinfer_openapi.AuthenticationApi
+              rxinferclient.AuthenticationApi
             
           </span>
         </div>
@@ -602,7 +602,7 @@
   
   
   <span class="md-ellipsis">
-    rxinfer_openapi.AuthenticationApi
+    rxinferclient.AuthenticationApi
     
   </span>
   
@@ -971,7 +971,7 @@
   
   
   <span class="md-ellipsis">
-    rxinfer_openapi.ModelsApi
+    rxinferclient.ModelsApi
     
   </span>
   
@@ -1040,7 +1040,7 @@
   
   
   <span class="md-ellipsis">
-    rxinfer_openapi.ServerApi
+    rxinferclient.ServerApi
     
   </span>
   
@@ -1218,7 +1218,7 @@
   
 
 
-<h1 id="rxinfer_openapiauthenticationapi">rxinfer_openapi.AuthenticationApi<a class="headerlink" href="#rxinfer_openapiauthenticationapi" title="Permanent link">&para;</a></h1>
+<h1 id="rxinferclientauthenticationapi">rxinferclient.AuthenticationApi<a class="headerlink" href="#rxinferclientauthenticationapi" title="Permanent link">&para;</a></h1>
 <p>All URIs are relative to <em>http://localhost:8000/v1</em></p>
 <table>
 <thead>
@@ -1248,26 +1248,26 @@
 <p>Generate authentication token</p>
 <p>Generates a new authentication token for accessing protected endpoints</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.token_generate_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenGenerateResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.token_generate_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenGenerateResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">AuthenticationApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">AuthenticationApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Generate authentication token</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">token_generate</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">token_generate</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of AuthenticationApi-&gt;token_generate:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1317,14 +1317,14 @@
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.token_roles_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenRolesResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.token_roles_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenRolesResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1334,18 +1334,18 @@
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">AuthenticationApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">AuthenticationApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get token roles</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">token_roles</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">token_roles</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of AuthenticationApi-&gt;token_roles:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>

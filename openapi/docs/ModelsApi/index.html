@@ -26,7 +26,7 @@
     
     
       
-        <title>rxinfer_openapi.ModelsApi - RxInfer Client</title>
+        <title>rxinferclient.ModelsApi - RxInfer Client</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rxinfer_openapimodelsapi" class="md-skip">
+        <a href="#rxinferclientmodelsapi" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              rxinfer_openapi.ModelsApi
+              rxinferclient.ModelsApi
             
           </span>
         </div>
@@ -593,7 +593,7 @@
   
   
   <span class="md-ellipsis">
-    rxinfer_openapi.AuthenticationApi
+    rxinferclient.AuthenticationApi
     
   </span>
   
@@ -970,7 +970,7 @@
   
   
   <span class="md-ellipsis">
-    rxinfer_openapi.ModelsApi
+    rxinferclient.ModelsApi
     
   </span>
   
@@ -1040,7 +1040,7 @@
   
   
   <span class="md-ellipsis">
-    rxinfer_openapi.ServerApi
+    rxinferclient.ServerApi
     
   </span>
   
@@ -1218,7 +1218,7 @@
   
 
 
-<h1 id="rxinfer_openapimodelsapi">rxinfer_openapi.ModelsApi<a class="headerlink" href="#rxinfer_openapimodelsapi" title="Permanent link">&para;</a></h1>
+<h1 id="rxinferclientmodelsapi">rxinferclient.ModelsApi<a class="headerlink" href="#rxinferclientmodelsapi" title="Permanent link">&para;</a></h1>
 <p>All URIs are relative to <em>http://localhost:8000/v1</em></p>
 <table>
 <thead>
@@ -1326,15 +1326,15 @@
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.attach_events_to_episode_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">AttachEventsToEpisodeRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.attach_events_to_episode_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">AttachEventsToEpisodeRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1344,21 +1344,21 @@
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to attach events to</span>
     <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to attach events to</span>
-    <span class="n">attach_events_to_episode_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">AttachEventsToEpisodeRequest</span><span class="p">()</span> <span class="c1"># AttachEventsToEpisodeRequest | </span>
+    <span class="n">attach_events_to_episode_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">AttachEventsToEpisodeRequest</span><span class="p">()</span> <span class="c1"># AttachEventsToEpisodeRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Attach events to an episode</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_events_to_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">attach_events_to_episode_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_events_to_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">attach_events_to_episode_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;attach_events_to_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1447,15 +1447,15 @@
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.attach_metadata_to_event_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">AttachMetadataToEventRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.attach_metadata_to_event_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">AttachMetadataToEventRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1465,22 +1465,22 @@
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to attach metadata to</span>
     <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to attach metadata to</span>
     <span class="n">event_id</span> <span class="o">=</span> <span class="mi">56</span> <span class="c1"># int | ID of the event to attach metadata to</span>
-    <span class="n">attach_metadata_to_event_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">AttachMetadataToEventRequest</span><span class="p">()</span> <span class="c1"># AttachMetadataToEventRequest | </span>
+    <span class="n">attach_metadata_to_event_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">AttachMetadataToEventRequest</span><span class="p">()</span> <span class="c1"># AttachMetadataToEventRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Attach metadata to an event</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_metadata_to_event</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">attach_metadata_to_event_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_metadata_to_event</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">attach_metadata_to_event_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;attach_metadata_to_event:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1572,15 +1572,15 @@ When a new episode is created, it becomes the current episode for the model inst
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.create_episode_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateEpisodeRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.create_episode_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateEpisodeRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1590,20 +1590,20 @@ When a new episode is created, it becomes the current episode for the model inst
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to create episode for</span>
-    <span class="n">create_episode_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">CreateEpisodeRequest</span><span class="p">()</span> <span class="c1"># CreateEpisodeRequest | </span>
+    <span class="n">create_episode_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">CreateEpisodeRequest</span><span class="p">()</span> <span class="c1"># CreateEpisodeRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Create a new episode for a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">create_episode_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">create_episode_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;create_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1686,15 +1686,15 @@ When a new episode is created, it becomes the current episode for the model inst
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.create_model_instance_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateModelInstanceRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.create_model_instance_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateModelInstanceResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.create_model_instance_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateModelInstanceRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.create_model_instance_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateModelInstanceResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1704,19 +1704,19 @@ When a new episode is created, it becomes the current episode for the model inst
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
-    <span class="n">create_model_instance_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">CreateModelInstanceRequest</span><span class="p">()</span> <span class="c1"># CreateModelInstanceRequest | </span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">create_model_instance_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">CreateModelInstanceRequest</span><span class="p">()</span> <span class="c1"># CreateModelInstanceRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Create a new model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">(</span><span class="n">create_model_instance_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">(</span><span class="n">create_model_instance_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;create_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1795,14 +1795,14 @@ If the deleted episode was the current episode, the default episode will become 
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1812,20 +1812,20 @@ If the deleted episode was the current episode, the default episode will become 
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to delete episode for</span>
     <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to delete</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Delete an episode for a model</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;delete_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1908,14 +1908,14 @@ If the deleted episode was the current episode, the default episode will become 
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -1925,19 +1925,19 @@ If the deleted episode was the current episode, the default episode will become 
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to delete</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Delete a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;delete_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2009,14 +2009,14 @@ If the deleted episode was the current episode, the default episode will become 
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.available_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">AvailableModel</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.available_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">AvailableModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2026,19 +2026,19 @@ If the deleted episode was the current episode, the default episode will become 
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">model_name</span> <span class="o">=</span> <span class="s1">&#39;model_name_example&#39;</span> <span class="c1"># str | Name of the model to retrieve information for (including version identifier if applicable, e.g. \&quot;BetaBernoulli-v1\&quot;)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get information about a specific model available for creation</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_available_model:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2113,14 +2113,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.available_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">AvailableModel</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.available_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">AvailableModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2130,18 +2130,18 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get models available for creation</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_models</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_models</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_available_models:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2191,14 +2191,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2208,20 +2208,20 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve episode for</span>
     <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to retrieve</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get episode information</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episode_info</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episode_info</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_episode_info:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2299,14 +2299,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.episode_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">EpisodeInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2316,19 +2316,19 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve episodes for</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get all episodes for a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episodes</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episodes</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_episodes:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2400,14 +2400,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstance</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.model_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstance</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2417,19 +2417,19 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve information for</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get model instance information</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2501,14 +2501,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance_parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstanceParameters</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.model_instance_parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstanceParameters</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2518,19 +2518,19 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get the parameters of a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_parameters</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_parameters</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance_parameters:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2607,14 +2607,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance_state</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstanceState</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.model_instance_state</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstanceState</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2624,19 +2624,19 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve state for</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get the state of a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_state</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_state</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance_state:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2713,14 +2713,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.model_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstance</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.model_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelInstance</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2730,18 +2730,18 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get all created model instances</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instances</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instances</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instances:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2791,15 +2791,15 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.infer_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.infer_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.infer_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.infer_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2809,20 +2809,20 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to run inference on</span>
-    <span class="n">infer_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">InferRequest</span><span class="p">()</span> <span class="c1"># InferRequest | </span>
+    <span class="n">infer_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">InferRequest</span><span class="p">()</span> <span class="c1"># InferRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Run inference</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_inference</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">infer_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_inference</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">infer_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;run_inference:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2900,15 +2900,15 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.learn_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">LearnRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.learn_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">LearnResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.learn_request</span><span class="w"> </span><span class="kn">import</span> <span class="n">LearnRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.learn_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">LearnResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -2918,20 +2918,20 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | </span>
-    <span class="n">learn_request</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">LearnRequest</span><span class="p">()</span> <span class="c1"># LearnRequest | </span>
+    <span class="n">learn_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">LearnRequest</span><span class="p">()</span> <span class="c1"># LearnRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Learn from previous observations</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_learning</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">learn_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_learning</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">learn_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;run_learning:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -3009,14 +3009,14 @@ For example, a token with only the "user" role might not have access to all mode
 <ul>
 <li>Bearer Authentication (ApiKeyAuth):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinfer_openapi</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rxinfer_openapi.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rxinferclient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.models.success_response</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rxinferclient.rest</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiException</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Defining the host is optional and defaults to http://localhost:8000/v1</span>
 <span class="c1"># See configuration.py for a list of all supported configuration parameters.</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8000/v1&quot;</span>
 <span class="p">)</span>
 
@@ -3026,20 +3026,20 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="c1"># satisfies your auth use case.</span>
 
 <span class="c1"># Configure Bearer authorization: ApiKeyAuth</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span>
     <span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BEARER_TOKEN&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">with</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
-    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinfer_openapi</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to wipe episode for</span>
     <span class="n">episode_name</span> <span class="o">=</span> <span class="s1">&#39;episode_name_example&#39;</span> <span class="c1"># str | Name of the episode to wipe</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Wipe all events from an episode</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">wipe_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">wipe_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;wipe_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
