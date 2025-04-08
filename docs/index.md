@@ -15,4 +15,4 @@ A Python client for interacting with RxInferServer.
 
 ## API Reference
 
-::: rxinfer_client.client
+::: rxinferclient.client
