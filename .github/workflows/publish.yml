@@ -54,4 +54,30 @@ jobs:
     - name: Publish package to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        packages-dir: dist/ 
+        packages-dir: dist/
+
+    - name: Create GitHub Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Get the previous tag
+        PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+        
+        # Get the current tag
+        CURRENT_TAG=$(git describe --tags --abbrev=0)
+        
+        # Get PRs merged since previous tag
+        if [ -n "$PREVIOUS_TAG" ]; then
+          PR_LIST=$(gh pr list --state merged --search "merged:>$PREVIOUS_TAG" --json number,title --jq '.[] | "- #\(.number) \(.title)"')
+        else
+          PR_LIST=$(gh pr list --state merged --json number,title --jq '.[] | "- #\(.number) \(.title)"')
+        fi
+        
+        # Create release notes
+        RELEASE_NOTES="## What's Changed\n\n$PR_LIST\n\n**Full Changelog**: https://github.com/${{ github.repository }}/compare/$PREVIOUS_TAG...$CURRENT_TAG"
+        
+        # Create the release
+        gh release create $CURRENT_TAG \
+          --title "$CURRENT_TAG" \
+          --notes "$RELEASE_NOTES" \
+          --target ${{ github.sha }} 
