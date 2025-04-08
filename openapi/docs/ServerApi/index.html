@@ -1273,13 +1273,13 @@
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ServerApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get server information</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_server_info</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_server_info</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ServerApi-&gt;get_server_info:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1339,13 +1339,13 @@
 
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ServerApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Health check endpoint</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">ping_server</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">ping_server</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ServerApi-&gt;ping_server:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>

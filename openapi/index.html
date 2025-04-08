@@ -1432,8 +1432,6 @@ For more information, please visit <a href="https://github.com/lazydynamics/RxIn
 <ul>
 <li>urllib3 &gt;= 2.1.0, &lt; 3.0.0</li>
 <li>python-dateutil &gt;= 2.8.2</li>
-<li>aiohttp &gt;= 3.8.4</li>
-<li>aiohttp-retry &gt;= 2.8.3</li>
 <li>pydantic &gt;= 2</li>
 <li>typing-extensions &gt;= 4.7.1</li>
 </ul>
@@ -1453,13 +1451,13 @@ you can run the following:</p>
 
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">AuthenticationApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Generate authentication token</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">token_generate</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">token_generate</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of AuthenticationApi-&gt;token_generate:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>

@@ -1349,7 +1349,7 @@
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to attach events to</span>
@@ -1358,7 +1358,7 @@
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Attach events to an episode</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_events_to_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">attach_events_to_episode_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_events_to_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">attach_events_to_episode_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;attach_events_to_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1470,7 +1470,7 @@
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to attach metadata to</span>
@@ -1480,7 +1480,7 @@
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Attach metadata to an event</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_metadata_to_event</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">attach_metadata_to_event_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">attach_metadata_to_event</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">attach_metadata_to_event_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;attach_metadata_to_event:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1595,7 +1595,7 @@ When a new episode is created, it becomes the current episode for the model inst
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to create episode for</span>
@@ -1603,7 +1603,7 @@ When a new episode is created, it becomes the current episode for the model inst
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Create a new episode for a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">create_episode_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">create_episode_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;create_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1709,14 +1709,14 @@ When a new episode is created, it becomes the current episode for the model inst
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">create_model_instance_request</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">CreateModelInstanceRequest</span><span class="p">()</span> <span class="c1"># CreateModelInstanceRequest | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Create a new model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">(</span><span class="n">create_model_instance_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_model_instance</span><span class="p">(</span><span class="n">create_model_instance_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;create_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1817,7 +1817,7 @@ If the deleted episode was the current episode, the default episode will become 
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to delete episode for</span>
@@ -1825,7 +1825,7 @@ If the deleted episode was the current episode, the default episode will become 
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Delete an episode for a model</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;delete_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1930,14 +1930,14 @@ If the deleted episode was the current episode, the default episode will become 
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to delete</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Delete a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">delete_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;delete_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2031,14 +2031,14 @@ If the deleted episode was the current episode, the default episode will become 
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">model_name</span> <span class="o">=</span> <span class="s1">&#39;model_name_example&#39;</span> <span class="c1"># str | Name of the model to retrieve information for (including version identifier if applicable, e.g. \&quot;BetaBernoulli-v1\&quot;)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get information about a specific model available for creation</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_available_model:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2135,13 +2135,13 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get models available for creation</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_models</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_available_models</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_available_models:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2213,7 +2213,7 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve episode for</span>
@@ -2221,7 +2221,7 @@ For example, a token with only the "user" role might not have access to all mode
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get episode information</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episode_info</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episode_info</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_episode_info:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2321,14 +2321,14 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve episodes for</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get all episodes for a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episodes</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_episodes</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_episodes:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2422,14 +2422,14 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve information for</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get model instance information</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2523,14 +2523,14 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | </span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get the parameters of a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_parameters</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_parameters</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance_parameters:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2629,14 +2629,14 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to retrieve state for</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get the state of a model instance</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_state</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instance_state</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instance_state:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2735,13 +2735,13 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Get all created model instances</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instances</span><span class="p">()</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">get_model_instances</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;get_model_instances:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2814,7 +2814,7 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to run inference on</span>
@@ -2822,7 +2822,7 @@ For example, a token with only the "user" role might not have access to all mode
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Run inference</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_inference</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">infer_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_inference</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">infer_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;run_inference:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -2923,7 +2923,7 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | </span>
@@ -2931,7 +2931,7 @@ For example, a token with only the "user" role might not have access to all mode
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Learn from previous observations</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_learning</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">learn_request</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">run_learning</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">learn_request</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;run_learning:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -3031,7 +3031,7 @@ For example, a token with only the "user" role might not have access to all mode
 <span class="p">)</span>
 
 <span class="c1"># Enter a context with an instance of the API client</span>
-<span class="k">async</span> <span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
     <span class="c1"># Create an instance of the API class</span>
     <span class="n">api_instance</span> <span class="o">=</span> <span class="n">rxinferclient</span><span class="o">.</span><span class="n">ModelsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
     <span class="n">instance_id</span> <span class="o">=</span> <span class="s1">&#39;instance_id_example&#39;</span> <span class="c1"># str | ID of the model instance to wipe episode for</span>
@@ -3039,7 +3039,7 @@ For example, a token with only the "user" role might not have access to all mode
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Wipe all events from an episode</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">wipe_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">wipe_episode</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">episode_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The response of ModelsApi-&gt;wipe_episode:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">pprint</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
