@@ -21,8 +21,6 @@ To be able to use it, you will need these dependencies in your own package that 
 
 * urllib3 >= 2.1.0, < 3.0.0
 * python-dateutil >= 2.8.2
-* aiohttp >= 3.8.4
-* aiohttp-retry >= 2.8.3
 * pydantic >= 2
 * typing-extensions >= 4.7.1
 
@@ -46,13 +44,13 @@ configuration = rxinferclient.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.AuthenticationApi(api_client)
 
     try:
         # Generate authentication token
-        api_response = await api_instance.token_generate()
+        api_response = api_instance.token_generate()
         print("The response of AuthenticationApi->token_generate:\n")
         pprint(api_response)
     except ApiException as e:

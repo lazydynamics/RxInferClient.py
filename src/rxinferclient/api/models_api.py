@@ -54,7 +54,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def attach_events_to_episode(
+    def attach_events_to_episode(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to attach events to")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to attach events to")],
@@ -120,11 +120,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -132,7 +132,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def attach_events_to_episode_with_http_info(
+    def attach_events_to_episode_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to attach events to")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to attach events to")],
@@ -198,11 +198,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -210,7 +210,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def attach_events_to_episode_without_preload_content(
+    def attach_events_to_episode_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to attach events to")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to attach events to")],
@@ -276,7 +276,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -367,7 +367,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def attach_metadata_to_event(
+    def attach_metadata_to_event(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to attach metadata to")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to attach metadata to")],
@@ -436,11 +436,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -448,7 +448,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def attach_metadata_to_event_with_http_info(
+    def attach_metadata_to_event_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to attach metadata to")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to attach metadata to")],
@@ -517,11 +517,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -529,7 +529,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def attach_metadata_to_event_without_preload_content(
+    def attach_metadata_to_event_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to attach metadata to")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to attach metadata to")],
@@ -598,7 +598,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -692,7 +692,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def create_episode(
+    def create_episode(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to create episode for")],
         create_episode_request: CreateEpisodeRequest,
@@ -754,11 +754,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -766,7 +766,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def create_episode_with_http_info(
+    def create_episode_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to create episode for")],
         create_episode_request: CreateEpisodeRequest,
@@ -828,11 +828,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -840,7 +840,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def create_episode_without_preload_content(
+    def create_episode_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to create episode for")],
         create_episode_request: CreateEpisodeRequest,
@@ -902,7 +902,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -990,7 +990,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def create_model_instance(
+    def create_model_instance(
         self,
         create_model_instance_request: CreateModelInstanceRequest,
         _request_timeout: Union[
@@ -1048,11 +1048,11 @@ class ModelsApi:
             '400': "ErrorResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1060,7 +1060,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def create_model_instance_with_http_info(
+    def create_model_instance_with_http_info(
         self,
         create_model_instance_request: CreateModelInstanceRequest,
         _request_timeout: Union[
@@ -1118,11 +1118,11 @@ class ModelsApi:
             '400': "ErrorResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1130,7 +1130,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def create_model_instance_without_preload_content(
+    def create_model_instance_without_preload_content(
         self,
         create_model_instance_request: CreateModelInstanceRequest,
         _request_timeout: Union[
@@ -1188,7 +1188,7 @@ class ModelsApi:
             '400': "ErrorResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1273,7 +1273,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def delete_episode(
+    def delete_episode(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to delete episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to delete")],
@@ -1335,11 +1335,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1347,7 +1347,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def delete_episode_with_http_info(
+    def delete_episode_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to delete episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to delete")],
@@ -1409,11 +1409,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1421,7 +1421,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def delete_episode_without_preload_content(
+    def delete_episode_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to delete episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to delete")],
@@ -1483,7 +1483,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1558,7 +1558,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def delete_model_instance(
+    def delete_model_instance(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to delete")],
         _request_timeout: Union[
@@ -1615,11 +1615,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1627,7 +1627,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def delete_model_instance_with_http_info(
+    def delete_model_instance_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to delete")],
         _request_timeout: Union[
@@ -1684,11 +1684,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1696,7 +1696,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def delete_model_instance_without_preload_content(
+    def delete_model_instance_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to delete")],
         _request_timeout: Union[
@@ -1753,7 +1753,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1825,7 +1825,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_available_model(
+    def get_available_model(
         self,
         model_name: Annotated[StrictStr, Field(description="Name of the model to retrieve information for (including version identifier if applicable, e.g. \"BetaBernoulli-v1\")")],
         _request_timeout: Union[
@@ -1882,11 +1882,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1894,7 +1894,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_available_model_with_http_info(
+    def get_available_model_with_http_info(
         self,
         model_name: Annotated[StrictStr, Field(description="Name of the model to retrieve information for (including version identifier if applicable, e.g. \"BetaBernoulli-v1\")")],
         _request_timeout: Union[
@@ -1951,11 +1951,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1963,7 +1963,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_available_model_without_preload_content(
+    def get_available_model_without_preload_content(
         self,
         model_name: Annotated[StrictStr, Field(description="Name of the model to retrieve information for (including version identifier if applicable, e.g. \"BetaBernoulli-v1\")")],
         _request_timeout: Union[
@@ -2020,7 +2020,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2092,7 +2092,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_available_models(
+    def get_available_models(
         self,
         _request_timeout: Union[
             None,
@@ -2144,11 +2144,11 @@ class ModelsApi:
             '200': "List[AvailableModel]",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2156,7 +2156,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_available_models_with_http_info(
+    def get_available_models_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2208,11 +2208,11 @@ class ModelsApi:
             '200': "List[AvailableModel]",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2220,7 +2220,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_available_models_without_preload_content(
+    def get_available_models_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2272,7 +2272,7 @@ class ModelsApi:
             '200': "List[AvailableModel]",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2341,7 +2341,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_episode_info(
+    def get_episode_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to retrieve")],
@@ -2402,11 +2402,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2414,7 +2414,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_episode_info_with_http_info(
+    def get_episode_info_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to retrieve")],
@@ -2475,11 +2475,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2487,7 +2487,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_episode_info_without_preload_content(
+    def get_episode_info_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to retrieve")],
@@ -2548,7 +2548,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2623,7 +2623,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_episodes(
+    def get_episodes(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve episodes for")],
         _request_timeout: Union[
@@ -2680,11 +2680,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2692,7 +2692,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_episodes_with_http_info(
+    def get_episodes_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve episodes for")],
         _request_timeout: Union[
@@ -2749,11 +2749,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2761,7 +2761,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_episodes_without_preload_content(
+    def get_episodes_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve episodes for")],
         _request_timeout: Union[
@@ -2818,7 +2818,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2890,7 +2890,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance(
+    def get_model_instance(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve information for")],
         _request_timeout: Union[
@@ -2947,11 +2947,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2959,7 +2959,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_with_http_info(
+    def get_model_instance_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve information for")],
         _request_timeout: Union[
@@ -3016,11 +3016,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3028,7 +3028,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_without_preload_content(
+    def get_model_instance_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve information for")],
         _request_timeout: Union[
@@ -3085,7 +3085,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3157,7 +3157,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_parameters(
+    def get_model_instance_parameters(
         self,
         instance_id: StrictStr,
         _request_timeout: Union[
@@ -3215,11 +3215,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3227,7 +3227,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_parameters_with_http_info(
+    def get_model_instance_parameters_with_http_info(
         self,
         instance_id: StrictStr,
         _request_timeout: Union[
@@ -3285,11 +3285,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3297,7 +3297,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_parameters_without_preload_content(
+    def get_model_instance_parameters_without_preload_content(
         self,
         instance_id: StrictStr,
         _request_timeout: Union[
@@ -3355,7 +3355,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3427,7 +3427,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_state(
+    def get_model_instance_state(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve state for")],
         _request_timeout: Union[
@@ -3485,11 +3485,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3497,7 +3497,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_state_with_http_info(
+    def get_model_instance_state_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve state for")],
         _request_timeout: Union[
@@ -3555,11 +3555,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3567,7 +3567,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instance_state_without_preload_content(
+    def get_model_instance_state_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to retrieve state for")],
         _request_timeout: Union[
@@ -3625,7 +3625,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3697,7 +3697,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instances(
+    def get_model_instances(
         self,
         _request_timeout: Union[
             None,
@@ -3749,11 +3749,11 @@ class ModelsApi:
             '200': "List[ModelInstance]",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3761,7 +3761,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instances_with_http_info(
+    def get_model_instances_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -3813,11 +3813,11 @@ class ModelsApi:
             '200': "List[ModelInstance]",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3825,7 +3825,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def get_model_instances_without_preload_content(
+    def get_model_instances_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -3877,7 +3877,7 @@ class ModelsApi:
             '200': "List[ModelInstance]",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3946,7 +3946,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def run_inference(
+    def run_inference(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to run inference on")],
         infer_request: InferRequest,
@@ -4007,11 +4007,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4019,7 +4019,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def run_inference_with_http_info(
+    def run_inference_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to run inference on")],
         infer_request: InferRequest,
@@ -4080,11 +4080,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4092,7 +4092,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def run_inference_without_preload_content(
+    def run_inference_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to run inference on")],
         infer_request: InferRequest,
@@ -4153,7 +4153,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4241,7 +4241,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def run_learning(
+    def run_learning(
         self,
         instance_id: StrictStr,
         learn_request: LearnRequest,
@@ -4302,11 +4302,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4314,7 +4314,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def run_learning_with_http_info(
+    def run_learning_with_http_info(
         self,
         instance_id: StrictStr,
         learn_request: LearnRequest,
@@ -4375,11 +4375,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4387,7 +4387,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def run_learning_without_preload_content(
+    def run_learning_without_preload_content(
         self,
         instance_id: StrictStr,
         learn_request: LearnRequest,
@@ -4448,7 +4448,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4536,7 +4536,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def wipe_episode(
+    def wipe_episode(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to wipe episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to wipe")],
@@ -4597,11 +4597,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4609,7 +4609,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def wipe_episode_with_http_info(
+    def wipe_episode_with_http_info(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to wipe episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to wipe")],
@@ -4670,11 +4670,11 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4682,7 +4682,7 @@ class ModelsApi:
 
 
     @validate_call
-    async def wipe_episode_without_preload_content(
+    def wipe_episode_without_preload_content(
         self,
         instance_id: Annotated[StrictStr, Field(description="ID of the model instance to wipe episode for")],
         episode_name: Annotated[StrictStr, Field(description="Name of the episode to wipe")],
@@ -4743,7 +4743,7 @@ class ModelsApi:
             '401': "UnauthorizedResponse",
             '404': "NotFoundResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

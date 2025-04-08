@@ -16,16 +16,22 @@ def test_client_initialization():
     client = RxInferClient()
     assert client != None
     
-async def test_simple_ping_to_the_server():
+def test_simple_ping_to_the_server():
     client = RxInferClient()
-    response = await client.server.ping_server()
+    response = client.server.ping_server()
     assert response != None
     assert response.status == 'ok'
     
-async def test_create_model_instance():
-    client = RxInferClient(api_key="dev-token")
-    response = await client.models.create_model_instance({
+def test_create_and_delete_model_instance():
+    client = RxInferClient()
+    response = client.models.create_model_instance({
         "model_name": "BetaBernoulli-v1",
     })
     assert response != None
     assert response.instance_id != None
+    
+    response = client.models.delete_model_instance(instance_id=response.instance_id)
+    assert response != None
+    assert response.message == "Model instance deleted successfully"
+    
+    

@@ -68,7 +68,7 @@ generate-client:
 		-o /local/$(GENERATED_DIR) \
 		--additional-properties=packageVersion=1.0.0 \
 		--additional-properties=packageName=$(PKGNAME) \
-		--additional-properties=library=asyncio \
+		--additional-properties=library=urllib3 \
 		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py \
 		--additional-properties=generateSourceCodeOnly=true
 	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" $(GENERATED_DIR)/$(PKGNAME)/docs/*.md && rm $(GENERATED_DIR)/$(PKGNAME)/docs/*.bak

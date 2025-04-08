@@ -23,7 +23,7 @@ def is_running_in_ci():
     return any(os.getenv(var) for var in ci_env_vars)
 
 @pytest.fixture(autouse=True, scope="session")
-async def wait_for_server():
+def wait_for_server():
     """Wait for the server to be available before running tests"""
     # Use longer timeout in CI, shorter locally
     is_ci = is_running_in_ci()
@@ -35,7 +35,7 @@ async def wait_for_server():
     while datetime.now() - start_time < timeout:
         try:
             client = RxInferClient()
-            response = await client.server.ping_server()
+            response = client.server.ping_server()
             if response.status == 'ok':
                 return  # Server is ready
         except ClientConnectorError:

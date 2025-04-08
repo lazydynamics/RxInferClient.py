@@ -32,13 +32,13 @@ configuration = rxinferclient.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.AuthenticationApi(api_client)
 
     try:
         # Generate authentication token
-        api_response = await api_instance.token_generate()
+        api_response = api_instance.token_generate()
         print("The response of AuthenticationApi->token_generate:\n")
         pprint(api_response)
     except Exception as e:
@@ -107,13 +107,13 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.AuthenticationApi(api_client)
 
     try:
         # Get token roles
-        api_response = await api_instance.token_roles()
+        api_response = api_instance.token_roles()
         print("The response of AuthenticationApi->token_roles:\n")
         pprint(api_response)
     except Exception as e:
