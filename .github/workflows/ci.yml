@@ -23,11 +23,11 @@ jobs:
     - name: Verify OpenAPI client generation
       run: |
         # Store hash of generated files
-        find rxinfer_client/api -type f -exec sha256sum {} \; | sort > generated_files.hash
+        find openapi -type f -exec sha256sum {} \; | sort > generated_files.hash
         # Generate again
         make generate-client
         # Compare hashes
-        find rxinfer_client/api -type f -exec sha256sum {} \; | sort > new_generated_files.hash
+        find openapi -type f -exec sha256sum {} \; | sort > new_generated_files.hash
         if ! diff generated_files.hash new_generated_files.hash; then
           echo "Generated files differ from committed files. Please run 'make generate-client' and commit the changes."
           exit 1
