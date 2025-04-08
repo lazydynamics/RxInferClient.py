@@ -22,7 +22,8 @@ dependencies = [
   "pydantic >= 2",
   "typing-extensions >= 4.7.1",
   "aiohttp",
-  "aiohttp_retry"
+  "aiohttp_retry",
+  "asyncer"
 ]
 
 [project.optional-dependencies]
