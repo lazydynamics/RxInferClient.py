@@ -1,4 +1,4 @@
-.PHONY: help generate-client clean test test-cov
+.PHONY: help generate-client clean test test-cov docs docs-serve docs-clean install-dev
 
 # Colors for terminal output
 ifdef NO_COLOR
@@ -29,6 +29,14 @@ help:
 	@echo '  ${YELLOW}test${RESET}                 Run tests'
 	@echo '  ${YELLOW}test-cov${RESET}             Run tests with coverage report'
 	@echo ''
+	@echo '${GREEN}Documentation commands:${RESET}'
+	@echo '  ${YELLOW}docs${RESET}                 Build the documentation (strict mode)'
+	@echo '  ${YELLOW}docs-serve${RESET}           Serve documentation locally'
+	@echo '  ${YELLOW}docs-clean${RESET}           Clean documentation build'
+	@echo ''
+	@echo '${GREEN}Development commands:${RESET}'
+	@echo '  ${YELLOW}install-dev${RESET}          Install development dependencies'
+	@echo ''
 	@echo '${GREEN}Help:${RESET}'
 	@echo '  ${YELLOW}help${RESET}                 Show this help message'
 	@echo ''
@@ -37,6 +45,12 @@ help:
 OPENAPI_SPEC_URL := https://raw.githubusercontent.com/lazydynamics/RxInferServer/main/openapi/spec.yaml
 TEMP_DIR := .temp
 GENERATED_DIR := openapi/client
+
+## Install development dependencies
+install-dev:
+	@echo "${GREEN}Installing development dependencies...${RESET}"
+	@pip install -e ".[dev]"
+	@echo "${GREEN}Development dependencies installed successfully!${RESET}"
 
 ## Generate Python client code
 generate-client:
@@ -70,4 +84,21 @@ test:
 ## Run tests with coverage
 test-cov:
 	@echo "${GREEN}Running tests with coverage...${RESET}"
-	@pytest --cov=rxinfer_client tests/ 
+	@pytest --cov=rxinfer_client tests/
+
+## Build documentation
+docs:
+	@echo "${GREEN}Building documentation...${RESET}"
+	@mkdocs build --strict
+	@echo "${GREEN}Documentation built successfully!${RESET}"
+
+## Serve documentation locally
+docs-serve:
+	@echo "${GREEN}Serving documentation locally...${RESET}"
+	@mkdocs serve
+
+## Clean documentation build
+docs-clean:
+	@echo "${GREEN}Cleaning documentation build...${RESET}"
+	@rm -rf site/
+	@echo "${GREEN}Documentation build cleaned!${RESET}" 

@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev]"
+    
+    - name: Upload setup artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: python-dependencies
+        path: |
+          venv/
+          .venv/
+          **/__pycache__/
+          **/*.pyc
+        retention-days: 1
+
+  openapi-client-generation:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download setup artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: python-dependencies
+        path: .
+    
+    - name: Verify OpenAPI client generation
+      run: |
+        # Store hash of generated files
+        find rxinfer_client/api -type f -exec sha256sum {} \; | sort > generated_files.hash
+        # Generate again
+        make generate-client
+        # Compare hashes
+        find rxinfer_client/api -type f -exec sha256sum {} \; | sort > new_generated_files.hash
+        if ! diff generated_files.hash new_generated_files.hash; then
+          echo "Generated files differ from committed files. Please run 'make generate-client' and commit the changes."
+          exit 1
+        fi
+
+  test:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download setup artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: python-dependencies
+        path: .
+    
+    - name: Run tests
+      run: make test
+
+  docs:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download setup artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: python-dependencies
+        path: .
+    
+    - name: Build documentation
+      run: make docs
+    
+    - name: Deploy documentation
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        publish_branch: gh-pages 

@@ -11,21 +11,34 @@ RxInferClient provides a simple and intuitive interface to work with RxInfer fro
 ## Installation
 
 ```bash
-pip install rxinferclient
+pip install rxinfer-client
 ```
 
 ## Requirements
 
 - Python 3.9+
-- Dependencies are listed in `requirements.txt`
+- Dependencies are managed through `pyproject.toml`
 
-## Contributing
+## Development
+
+### Project Structure
+
+```
+RxInferClient.py/
+├── src/
+│   └── rxinfer_client/      # Main package code
+├── openapi/
+│   └── client/             # Auto-generated OpenAPI client
+├── tests/                  # Test suite
+├── Makefile               # Development commands
+└── pyproject.toml         # Package configuration
+```
 
 ### Development Setup
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/RxInferClient.py.git
+   git clone https://github.com/lazydynamics/RxInferClient.py.git
    cd RxInferClient.py
    ```
 
@@ -36,6 +49,51 @@ pip install rxinferclient
    pip install -e ".[dev]"
    ```
 
+3. Generate the OpenAPI client:
+   ```bash
+   make generate-client
+   ```
+
+### Development Commands
+
+The project uses a Makefile for common development tasks:
+
+```bash
+# Generate OpenAPI client code
+make generate-client
+
+# Run tests
+make test
+
+# Run tests with coverage
+make test-cov
+
+# Clean generated files
+make clean
+
+# Show all available commands
+make help
+```
+
+### Testing
+
+The project uses pytest for testing. You can run tests in two ways:
+
+1. Using the Makefile:
+   ```bash
+   make test
+   ```
+
+2. Directly with pytest:
+   ```bash
+   pytest tests/
+   ```
+
+For coverage reports:
+```bash
+make test-cov
+```
+
 ### Building the Package
 
 To build the package, run:
@@ -45,14 +103,6 @@ python -m build
 ```
 
 This will create both source distribution and wheel packages in the `dist/` directory.
-
-### Testing
-
-Run tests using pytest:
-
-```bash
-pytest tests/
-```
 
 ### Publishing the Package
 
@@ -75,6 +125,8 @@ pytest tests/
    ```bash
    python -m twine upload dist/*
    ```
+
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 

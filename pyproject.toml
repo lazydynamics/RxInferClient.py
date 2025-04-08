@@ -30,7 +30,12 @@ dev = [
   "pytest-cov",
   "pytest-mock",
   "black",
-  "isort"
+  "isort",
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocstrings[python]",
+  "mkdocs-gen-files",
+  "mkdocs-literate-nav"
 ]
 
 [project.urls]
