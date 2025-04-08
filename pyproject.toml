@@ -1,14 +1,13 @@
 [project]
-name = "rxinfer-client"
+name = "rxinferclient"
 version = "0.0.1"
 authors = [
   { name="Lazy Dynamics", email="info@lazydynamics.com" },
 ]
-description = "The official Python library for the RxInfer API"
+description = "The official Python library for the RxInferServer API"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
-  "Typing :: Typed",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
