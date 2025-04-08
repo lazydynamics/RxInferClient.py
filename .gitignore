@@ -113,3 +113,8 @@ dmypy.json
 .vscode/
 *.swp
 *.swo 
+
+# Extra project specific files
+.temp
+**/.DS_Store
+**/*.bak

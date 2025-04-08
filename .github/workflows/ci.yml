@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  openapi-client-generation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: make install-dev
+    
+    - name: Verify OpenAPI client generation
+      run: |
+        # Store hash of essential generated files
+        find openapi/client/rxinfer_openapi -type f \( -name "*.py" -o -name "*.json" \) -not -path "*/\.*" -exec sha256sum {} \; | sort > generated_files.hash
+        # Generate again
+        make generate-client
+        # Compare hashes of essential files
+        find openapi/client/rxinfer_openapi -type f \( -name "*.py" -o -name "*.json" \) -not -path "*/\.*" -exec sha256sum {} \; | sort > new_generated_files.hash
+        if ! diff generated_files.hash new_generated_files.hash; then
+          echo "ERROR: Generated files differ from committed files."
+          echo "This usually means that the OpenAPI client code needs to be regenerated."
+          echo "Please run 'make generate-client' locally and commit the changes."
+          echo ""
+          echo "Differences found in the following files:"
+          diff generated_files.hash new_generated_files.hash || true
+          exit 1
+        fi
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: make install-dev
+    
+    - name: Run tests
+      run: make test
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: make install-dev
+    
+    - name: Build documentation
+      run: make docs
+    
+    - name: Deploy documentation
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        publish_branch: gh-pages 
