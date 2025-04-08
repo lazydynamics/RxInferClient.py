@@ -17,7 +17,10 @@ license = "Apache-2.0"
 license-files = ["LICENSE"]
 dependencies = [
   "niquests",
-  "rxinfer_openapi @ {root:uri}/openapi/client"
+  "urllib3 >= 2.1.0, < 3.0.0",
+  "python-dateutil >= 2.8.2",
+  "pydantic >= 2",
+  "typing-extensions >= 4.7.1"
 ]
 
 [project.optional-dependencies]

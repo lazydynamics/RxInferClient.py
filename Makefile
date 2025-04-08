@@ -47,7 +47,7 @@ help:
 # Variables
 OPENAPI_SPEC_URL := https://raw.githubusercontent.com/lazydynamics/RxInferServer/main/openapi/spec.yaml
 TEMP_DIR := .temp
-GENERATED_DIR := openapi/client
+GENERATED_DIR := src/rxinferclient/openapi
 
 ## Install development dependencies
 install-dev:
@@ -66,11 +66,12 @@ generate-client:
 		-i /local/$(TEMP_DIR)/spec.yaml \
 		-g python \
 		-o /local/$(GENERATED_DIR) \
-		--package-name rxinfer_openapi \
-		--additional-properties=projectName=rxinfer-openapi \
-		--additional-properties=packageVersion=0.1.0 \
+		--package-name openapi \
+		--additional-properties=projectName=openapi \
+		--additional-properties=packageVersion=1.0.0 \
 		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py
-	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" openapi/client/docs/*.md && rm openapi/client/docs/*.bak
+		--additional-properties=generateSourceCodeOnly=true
+	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" $(GENERATED_DIR)/docs/*.md && rm $(GENERATED_DIR)/docs/*.bak
 	@rm -rf $(TEMP_DIR)
 	@echo "${GREEN}Client code generated successfully!${RESET}"
 
