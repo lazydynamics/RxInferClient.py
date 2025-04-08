@@ -1,5 +1,5 @@
 [project]
-name = "RxInferClient"
+name = "rxinfer-client"
 version = "0.0.1"
 authors = [
   { name="Lazy Dynamics", email="info@lazydynamics.com" },
@@ -15,16 +15,22 @@ classifiers = [
   "License :: OSI Approved :: Apache Software License"
 ]
 license = "Apache-2.0"
-license-files = ["LICENCSE"]
+license-files = ["LICENSE"]
 dependencies = [
-  "niquests"
+  "niquests",
+  "rxinfer_openapi @ {root:uri}/openapi/client"
 ]
 
 [project.optional-dependencies]
 dev = [
   "hatchling",
   "twine",
-  "mypy"
+  "mypy",
+  "pytest",
+  "pytest-cov",
+  "pytest-mock",
+  "black",
+  "isort"
 ]
 
 [project.urls]
@@ -32,6 +38,14 @@ Homepage = "https://github.com/lazydynamics/RxInferClient.py"
 Repository = "https://github.com/lazydynamics/RxInferClient.py"
 Issues = "https://github.com/lazydynamics/RxInferClient.py/issues"
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=rxinfer_client --cov-report=term-missing"
