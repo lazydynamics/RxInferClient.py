@@ -3,7 +3,7 @@ Main client class for RxInfer API
 """
 
 from typing import Optional
-from rxinfer_client.generated import ApiClient
+from rxinfer_openapi import ApiClient
 
 class RxInferClient:
     """
@@ -13,5 +13,6 @@ class RxInferClient:
     wrapping the auto-generated client code.
     """
     
-    def __init__(self, base_url: str, api_key: Optional[str] = None):
-        self._api_client = ApiClient(base_url=base_url, api_key=api_key)
+    def __init__(self, api_key: Optional[str] = None):
+        self._api_client = ApiClient()
+        self._api_client.configuration.access_token = api_key
