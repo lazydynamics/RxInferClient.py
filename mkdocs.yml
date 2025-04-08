@@ -33,14 +33,20 @@ theme:
 
 plugins:
   - search
+  - autorefs
   - mkdocstrings:
-      default_handler: python
       handlers:
         python:
-          rendering:
-            show_source: true
-            show_root_heading: true
-            show_category_heading: true
+          options:
+            show_source: false
+            docstring_style: google
+            docstring_section_style: spacy
+            merge_init_into_class: true
+          selection:
+            docstring_style: google
+          setup_commands:
+            - import sys
+            - sys.path.append(".")
   - literate-nav
 
 nav:

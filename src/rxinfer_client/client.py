@@ -1,18 +1,31 @@
-"""
-Main client class for RxInfer API
-"""
+
 
 from typing import Optional
 from rxinfer_openapi import ApiClient
 
 class RxInferClient:
-    """
-    High-level client for the RxInfer API.
+    """High-level client for the RxInfer API.
     
     This class provides a more user-friendly interface to the RxInfer API,
     wrapping the auto-generated client code.
     """
     
     def __init__(self, api_key: Optional[str] = None):
+        """Initialize the RxInfer client.
+        
+        Parameters:
+            api_key: Optional API key for authentication. If not provided,
+                    the client will attempt to use the RXINFER_API_KEY environment
+                    variable or look for it in the configuration file.
+
+        """
         self._api_client = ApiClient()
         self._api_client.configuration.access_token = api_key
+        
+    def ping(self) -> bool:
+        """Check if the server is responding.
+        
+        Returns:
+            bool: True if the server is responding, False otherwise.
+        """
+        return self._api_client.ping()
