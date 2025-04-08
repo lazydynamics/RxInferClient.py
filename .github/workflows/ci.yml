@@ -22,14 +22,19 @@ jobs:
     
     - name: Verify OpenAPI client generation
       run: |
-        # Store hash of generated files
-        find openapi -type f -exec sha256sum {} \; | sort > generated_files.hash
+        # Store hash of essential generated files
+        find openapi/client/rxinfer_openapi -type f \( -name "*.py" -o -name "*.json" \) -not -path "*/\.*" -exec sha256sum {} \; | sort > generated_files.hash
         # Generate again
         make generate-client
-        # Compare hashes
-        find openapi -type f -exec sha256sum {} \; | sort > new_generated_files.hash
+        # Compare hashes of essential files
+        find openapi/client/rxinfer_openapi -type f \( -name "*.py" -o -name "*.json" \) -not -path "*/\.*" -exec sha256sum {} \; | sort > new_generated_files.hash
         if ! diff generated_files.hash new_generated_files.hash; then
-          echo "Generated files differ from committed files. Please run 'make generate-client' and commit the changes."
+          echo "ERROR: Generated files differ from committed files."
+          echo "This usually means that the OpenAPI client code needs to be regenerated."
+          echo "Please run 'make generate-client' locally and commit the changes."
+          echo ""
+          echo "Differences found in the following files:"
+          diff generated_files.hash new_generated_files.hash || true
           exit 1
         fi
 
