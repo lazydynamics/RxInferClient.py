@@ -66,56 +66,56 @@ All URIs are relative to *http://localhost:8000/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthenticationApi* | [**token_generate**](rxinferclient/docs/AuthenticationApi.md#token_generate) | **POST** /token/generate | Generate authentication token
-*AuthenticationApi* | [**token_roles**](rxinferclient/docs/AuthenticationApi.md#token_roles) | **GET** /token/roles | Get token roles
-*ModelsApi* | [**attach_events_to_episode**](rxinferclient/docs/ModelsApi.md#attach_events_to_episode) | **POST** /models/i/{instance_id}/episodes/{episode_name}/attach-events | Attach events to an episode
-*ModelsApi* | [**attach_metadata_to_event**](rxinferclient/docs/ModelsApi.md#attach_metadata_to_event) | **POST** /models/i/{instance_id}/episodes/{episode_name}/events/{event_id}/attach-metadata | Attach metadata to an event
-*ModelsApi* | [**create_episode**](rxinferclient/docs/ModelsApi.md#create_episode) | **POST** /models/i/{instance_id}/create-episode | Create a new episode for a model instance
-*ModelsApi* | [**create_model_instance**](rxinferclient/docs/ModelsApi.md#create_model_instance) | **POST** /models/create-instance | Create a new model instance
-*ModelsApi* | [**delete_episode**](rxinferclient/docs/ModelsApi.md#delete_episode) | **DELETE** /models/i/{instance_id}/episodes/{episode_name} | Delete an episode for a model
-*ModelsApi* | [**delete_model_instance**](rxinferclient/docs/ModelsApi.md#delete_model_instance) | **DELETE** /models/i/{instance_id} | Delete a model instance
-*ModelsApi* | [**get_available_model**](rxinferclient/docs/ModelsApi.md#get_available_model) | **GET** /models/available/{model_name} | Get information about a specific model available for creation
-*ModelsApi* | [**get_available_models**](rxinferclient/docs/ModelsApi.md#get_available_models) | **GET** /models/available | Get models available for creation
-*ModelsApi* | [**get_episode_info**](rxinferclient/docs/ModelsApi.md#get_episode_info) | **GET** /models/i/{instance_id}/episodes/{episode_name} | Get episode information
-*ModelsApi* | [**get_episodes**](rxinferclient/docs/ModelsApi.md#get_episodes) | **GET** /models/i/{instance_id}/episodes | Get all episodes for a model instance
-*ModelsApi* | [**get_model_instance**](rxinferclient/docs/ModelsApi.md#get_model_instance) | **GET** /models/i/{instance_id} | Get model instance information
-*ModelsApi* | [**get_model_instance_parameters**](rxinferclient/docs/ModelsApi.md#get_model_instance_parameters) | **GET** /models/i/{instance_id}/parameters | Get the parameters of a model instance
-*ModelsApi* | [**get_model_instance_state**](rxinferclient/docs/ModelsApi.md#get_model_instance_state) | **GET** /models/i/{instance_id}/state | Get the state of a model instance
-*ModelsApi* | [**get_model_instances**](rxinferclient/docs/ModelsApi.md#get_model_instances) | **GET** /models/instances | Get all created model instances
-*ModelsApi* | [**run_inference**](rxinferclient/docs/ModelsApi.md#run_inference) | **POST** /models/i/{instance_id}/infer | Run inference
-*ModelsApi* | [**run_learning**](rxinferclient/docs/ModelsApi.md#run_learning) | **POST** /models/i/{instance_id}/learn | Learn from previous observations
-*ModelsApi* | [**wipe_episode**](rxinferclient/docs/ModelsApi.md#wipe_episode) | **POST** /models/i/{instance_id}/episodes/{episode_name}/wipe | Wipe all events from an episode
-*ServerApi* | [**get_server_info**](rxinferclient/docs/ServerApi.md#get_server_info) | **GET** /info | Get server information
-*ServerApi* | [**ping_server**](rxinferclient/docs/ServerApi.md#ping_server) | **GET** /ping | Health check endpoint
+*AuthenticationApi* | [**token_generate**](docs/AuthenticationApi.md#token_generate) | **POST** /token/generate | Generate authentication token
+*AuthenticationApi* | [**token_roles**](docs/AuthenticationApi.md#token_roles) | **GET** /token/roles | Get token roles
+*ModelsApi* | [**attach_events_to_episode**](docs/ModelsApi.md#attach_events_to_episode) | **POST** /models/i/{instance_id}/episodes/{episode_name}/attach-events | Attach events to an episode
+*ModelsApi* | [**attach_metadata_to_event**](docs/ModelsApi.md#attach_metadata_to_event) | **POST** /models/i/{instance_id}/episodes/{episode_name}/events/{event_id}/attach-metadata | Attach metadata to an event
+*ModelsApi* | [**create_episode**](docs/ModelsApi.md#create_episode) | **POST** /models/i/{instance_id}/create-episode | Create a new episode for a model instance
+*ModelsApi* | [**create_model_instance**](docs/ModelsApi.md#create_model_instance) | **POST** /models/create-instance | Create a new model instance
+*ModelsApi* | [**delete_episode**](docs/ModelsApi.md#delete_episode) | **DELETE** /models/i/{instance_id}/episodes/{episode_name} | Delete an episode for a model
+*ModelsApi* | [**delete_model_instance**](docs/ModelsApi.md#delete_model_instance) | **DELETE** /models/i/{instance_id} | Delete a model instance
+*ModelsApi* | [**get_available_model**](docs/ModelsApi.md#get_available_model) | **GET** /models/available/{model_name} | Get information about a specific model available for creation
+*ModelsApi* | [**get_available_models**](docs/ModelsApi.md#get_available_models) | **GET** /models/available | Get models available for creation
+*ModelsApi* | [**get_episode_info**](docs/ModelsApi.md#get_episode_info) | **GET** /models/i/{instance_id}/episodes/{episode_name} | Get episode information
+*ModelsApi* | [**get_episodes**](docs/ModelsApi.md#get_episodes) | **GET** /models/i/{instance_id}/episodes | Get all episodes for a model instance
+*ModelsApi* | [**get_model_instance**](docs/ModelsApi.md#get_model_instance) | **GET** /models/i/{instance_id} | Get model instance information
+*ModelsApi* | [**get_model_instance_parameters**](docs/ModelsApi.md#get_model_instance_parameters) | **GET** /models/i/{instance_id}/parameters | Get the parameters of a model instance
+*ModelsApi* | [**get_model_instance_state**](docs/ModelsApi.md#get_model_instance_state) | **GET** /models/i/{instance_id}/state | Get the state of a model instance
+*ModelsApi* | [**get_model_instances**](docs/ModelsApi.md#get_model_instances) | **GET** /models/instances | Get all created model instances
+*ModelsApi* | [**run_inference**](docs/ModelsApi.md#run_inference) | **POST** /models/i/{instance_id}/infer | Run inference
+*ModelsApi* | [**run_learning**](docs/ModelsApi.md#run_learning) | **POST** /models/i/{instance_id}/learn | Learn from previous observations
+*ModelsApi* | [**wipe_episode**](docs/ModelsApi.md#wipe_episode) | **POST** /models/i/{instance_id}/episodes/{episode_name}/wipe | Wipe all events from an episode
+*ServerApi* | [**get_server_info**](docs/ServerApi.md#get_server_info) | **GET** /info | Get server information
+*ServerApi* | [**ping_server**](docs/ServerApi.md#ping_server) | **GET** /ping | Health check endpoint
 
 
 ## Documentation For Models
 
- - [AttachEventsToEpisodeRequest](rxinferclient/docs/AttachEventsToEpisodeRequest.md)
- - [AttachEventsToEpisodeRequestEventsInner](rxinferclient/docs/AttachEventsToEpisodeRequestEventsInner.md)
- - [AttachMetadataToEventRequest](rxinferclient/docs/AttachMetadataToEventRequest.md)
- - [AvailableModel](rxinferclient/docs/AvailableModel.md)
- - [AvailableModelDetails](rxinferclient/docs/AvailableModelDetails.md)
- - [CreateEpisodeRequest](rxinferclient/docs/CreateEpisodeRequest.md)
- - [CreateModelInstanceRequest](rxinferclient/docs/CreateModelInstanceRequest.md)
- - [CreateModelInstanceResponse](rxinferclient/docs/CreateModelInstanceResponse.md)
- - [DeleteModelInstanceRequest](rxinferclient/docs/DeleteModelInstanceRequest.md)
- - [EpisodeInfo](rxinferclient/docs/EpisodeInfo.md)
- - [ErrorResponse](rxinferclient/docs/ErrorResponse.md)
- - [InferRequest](rxinferclient/docs/InferRequest.md)
- - [InferResponse](rxinferclient/docs/InferResponse.md)
- - [LearnRequest](rxinferclient/docs/LearnRequest.md)
- - [LearnResponse](rxinferclient/docs/LearnResponse.md)
- - [ModelInstance](rxinferclient/docs/ModelInstance.md)
- - [ModelInstanceParameters](rxinferclient/docs/ModelInstanceParameters.md)
- - [ModelInstanceState](rxinferclient/docs/ModelInstanceState.md)
- - [NotFoundResponse](rxinferclient/docs/NotFoundResponse.md)
- - [PingResponse](rxinferclient/docs/PingResponse.md)
- - [ServerInfo](rxinferclient/docs/ServerInfo.md)
- - [SuccessResponse](rxinferclient/docs/SuccessResponse.md)
- - [TokenGenerateResponse](rxinferclient/docs/TokenGenerateResponse.md)
- - [TokenRolesResponse](rxinferclient/docs/TokenRolesResponse.md)
- - [UnauthorizedResponse](rxinferclient/docs/UnauthorizedResponse.md)
+ - [AttachEventsToEpisodeRequest](docs/AttachEventsToEpisodeRequest.md)
+ - [AttachEventsToEpisodeRequestEventsInner](docs/AttachEventsToEpisodeRequestEventsInner.md)
+ - [AttachMetadataToEventRequest](docs/AttachMetadataToEventRequest.md)
+ - [AvailableModel](docs/AvailableModel.md)
+ - [AvailableModelDetails](docs/AvailableModelDetails.md)
+ - [CreateEpisodeRequest](docs/CreateEpisodeRequest.md)
+ - [CreateModelInstanceRequest](docs/CreateModelInstanceRequest.md)
+ - [CreateModelInstanceResponse](docs/CreateModelInstanceResponse.md)
+ - [DeleteModelInstanceRequest](docs/DeleteModelInstanceRequest.md)
+ - [EpisodeInfo](docs/EpisodeInfo.md)
+ - [ErrorResponse](docs/ErrorResponse.md)
+ - [InferRequest](docs/InferRequest.md)
+ - [InferResponse](docs/InferResponse.md)
+ - [LearnRequest](docs/LearnRequest.md)
+ - [LearnResponse](docs/LearnResponse.md)
+ - [ModelInstance](docs/ModelInstance.md)
+ - [ModelInstanceParameters](docs/ModelInstanceParameters.md)
+ - [ModelInstanceState](docs/ModelInstanceState.md)
+ - [NotFoundResponse](docs/NotFoundResponse.md)
+ - [PingResponse](docs/PingResponse.md)
+ - [ServerInfo](docs/ServerInfo.md)
+ - [SuccessResponse](docs/SuccessResponse.md)
+ - [TokenGenerateResponse](docs/TokenGenerateResponse.md)
+ - [TokenRolesResponse](docs/TokenRolesResponse.md)
+ - [UnauthorizedResponse](docs/UnauthorizedResponse.md)
 
 
 <a id="documentation-for-authorization"></a>

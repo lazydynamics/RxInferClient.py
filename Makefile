@@ -72,8 +72,8 @@ generate-client:
 		--additional-properties=library=asyncio \
 		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py \
 		--additional-properties=generateSourceCodeOnly=true
-	@echo "${GREEN}Renaming README.md file...${RESET}"
 	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" $(GENERATED_DIR)/$(PKGNAME)/docs/*.md && rm $(GENERATED_DIR)/$(PKGNAME)/docs/*.bak
+	@sed -E -i.bak "s|\(rxinferclient/docs/|\(docs/|g" $(GENERATED_DIR)/$(PKGNAME)_README.md && rm $(GENERATED_DIR)/$(PKGNAME)_README.md.bak
 	@rm -rf $(TEMP_DIR)
 	@echo "${GREEN}Client code generated successfully!${RESET}"
 
