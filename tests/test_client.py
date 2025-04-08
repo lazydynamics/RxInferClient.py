@@ -15,6 +15,14 @@ def test_client_initialization():
     # Test with API key
     client = RxInferClient()
     assert client != None
+    assert client.server.ping_server().status == 'ok'
+    
+def test_client_initialization_with_server_url():
+    """Test client initialization with a custom server URL"""
+    client = RxInferClient(server_url="http://localhost:8000/v1")
+    assert client != None
+    assert client.server.ping_server().status == 'ok'
+
     
 def test_simple_ping_to_the_server():
     client = RxInferClient()

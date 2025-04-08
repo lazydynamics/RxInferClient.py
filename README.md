@@ -8,16 +8,28 @@ A Python client for interacting with RxInfer, a probabilistic programming framew
 
 RxInferClient provides a simple and intuitive interface to work with RxInfer from Python. It allows you to define models, run inference, and process results with a clean API.
 
+The client functionality is organized into several subfields:
+- `server`: Access to server-related operations
+- `authentication`: Authentication and token management
+- `models`: Model management and operations
+
 ### Quickstart
 
 ```python
 from rxinferclient import RxInferClient
 
+# Initialize with default settings (auto-generates API key)
 client = RxInferClient()
+
+# Or initialize with custom server URL
+client = RxInferClient(server_url="http://localhost:8000/v1")
+
+# Or initialize with your own API key
+client = RxInferClient(api_key="your-api-key")
 
 # Ping the server to check if it's running
 response = client.server.ping_server()
-print(response)
+print(response.status)  # 'ok'
 
 # Create a model instance
 response = client.models.create_model_instance({ 
@@ -25,7 +37,7 @@ response = client.models.create_model_instance({
 })
 instance_id = response.instance_id
 
-# Delete the model instance
+# Delete the model instance when done
 client.models.delete_model_instance(instance_id=instance_id)
 ```
 
