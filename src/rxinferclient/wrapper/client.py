@@ -1,6 +1,8 @@
 
 from typing import Optional
 
+import warnings
+
 from rxinferclient.api_client import ApiClient
 from rxinferclient.api.authentication_api import AuthenticationApi
 from rxinferclient.api.server_api import ServerApi
@@ -30,7 +32,7 @@ class RxInferClient:
                 api_key = response.token
             finally:
                 if api_key is None or not isinstance(api_key, str):
-                    raise ValueError("Failed to generate API key for the client. Provide an API key manually.")
+                    warnings.warn("Failed to generate API key for the client. Provide an API key manually.", UserWarning)
         
         self._api_client.configuration.access_token = api_key
         

@@ -3,9 +3,10 @@ Test configuration and fixtures
 """
 import os
 import time
-from datetime import datetime, timedelta
-from aiohttp.client_exceptions import ClientConnectorError
 import pytest
+
+from datetime import datetime, timedelta
+from urllib3.exceptions import HTTPError
 from rxinferclient import RxInferClient
 
 def is_running_in_ci():
@@ -38,7 +39,7 @@ def wait_for_server():
             response = client.server.ping_server()
             if response.status == 'ok':
                 return  # Server is ready
-        except ClientConnectorError:
+        except HTTPError:
             env_type = "CI" if is_ci else "local"
             print(f"Waiting for server to be available ({env_type} environment). Will retry in {retry_interval} seconds...")
             time.sleep(retry_interval)
