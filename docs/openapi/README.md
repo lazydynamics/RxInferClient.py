@@ -1,1 +1,1 @@
-../../openapi/client/README.md
+../../src/rxinferclient_README.md

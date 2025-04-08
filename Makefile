@@ -30,7 +30,6 @@ help:
 	@echo ''
 	@echo '${GREEN}Testing commands:${RESET}'
 	@echo '  ${YELLOW}test${RESET}                 Run tests'
-	@echo '  ${YELLOW}test-cov${RESET}             Run tests with coverage report'
 	@echo ''
 	@echo '${GREEN}Documentation commands:${RESET}'
 	@echo '  ${YELLOW}docs${RESET}                 Build the documentation (strict mode)'
@@ -47,7 +46,8 @@ help:
 # Variables
 OPENAPI_SPEC_URL := https://raw.githubusercontent.com/lazydynamics/RxInferServer/main/openapi/spec.yaml
 TEMP_DIR := .temp
-GENERATED_DIR := openapi/client
+GENERATED_DIR := src
+PKGNAME := rxinferclient
 
 ## Install development dependencies
 install-dev:
@@ -66,11 +66,13 @@ generate-client:
 		-i /local/$(TEMP_DIR)/spec.yaml \
 		-g python \
 		-o /local/$(GENERATED_DIR) \
-		--package-name rxinfer_openapi \
-		--additional-properties=projectName=rxinfer-openapi \
-		--additional-properties=packageVersion=0.1.0 \
-		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py
-	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" openapi/client/docs/*.md && rm openapi/client/docs/*.bak
+		--additional-properties=packageVersion=1.0.0 \
+		--additional-properties=packageName=$(PKGNAME) \
+		--additional-properties=library=asyncio \
+		--additional-properties=packageUrl=https://github.com/lazydynamics/RxInferClient.py \
+		--additional-properties=generateSourceCodeOnly=true
+	@sed -E -i.bak "s/\[default to '([^']*)'\]/default to '\1'/g" $(GENERATED_DIR)/$(PKGNAME)/docs/*.md && rm $(GENERATED_DIR)/$(PKGNAME)/docs/*.bak
+	@sed -E -i.bak "s|\(rxinferclient/docs/|\(docs/|g" $(GENERATED_DIR)/$(PKGNAME)_README.md && rm $(GENERATED_DIR)/$(PKGNAME)_README.md.bak
 	@rm -rf $(TEMP_DIR)
 	@echo "${GREEN}Client code generated successfully!${RESET}"
 
@@ -85,11 +87,6 @@ clean:
 test:
 	@echo "${GREEN}Running tests...${RESET}"
 	@pytest tests/
-
-## Run tests with coverage
-test-cov:
-	@echo "${GREEN}Running tests with coverage...${RESET}"
-	@pytest --cov=rxinfer_client tests/
 
 ## Build documentation
 docs:
