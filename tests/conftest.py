@@ -2,7 +2,7 @@
 Test configuration and fixtures
 """
 import pytest
-from rxinfer_client import RxInferClient
+from rxinferclient import RxInferClient
 
 @pytest.fixture
 def mock_base_url():
