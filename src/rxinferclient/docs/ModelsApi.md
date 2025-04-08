@@ -58,7 +58,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to attach events to
@@ -67,7 +67,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Attach events to an episode
-        api_response = await api_instance.attach_events_to_episode(instance_id, episode_name, attach_events_to_episode_request)
+        api_response = api_instance.attach_events_to_episode(instance_id, episode_name, attach_events_to_episode_request)
         print("The response of ModelsApi->attach_events_to_episode:\n")
         pprint(api_response)
     except Exception as e:
@@ -144,7 +144,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to attach metadata to
@@ -154,7 +154,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Attach metadata to an event
-        api_response = await api_instance.attach_metadata_to_event(instance_id, episode_name, event_id, attach_metadata_to_event_request)
+        api_response = api_instance.attach_metadata_to_event(instance_id, episode_name, event_id, attach_metadata_to_event_request)
         print("The response of ModelsApi->attach_metadata_to_event:\n")
         pprint(api_response)
     except Exception as e:
@@ -234,7 +234,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to create episode for
@@ -242,7 +242,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Create a new episode for a model instance
-        api_response = await api_instance.create_episode(instance_id, create_episode_request)
+        api_response = api_instance.create_episode(instance_id, create_episode_request)
         print("The response of ModelsApi->create_episode:\n")
         pprint(api_response)
     except Exception as e:
@@ -318,14 +318,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     create_model_instance_request = rxinferclient.CreateModelInstanceRequest() # CreateModelInstanceRequest | 
 
     try:
         # Create a new model instance
-        api_response = await api_instance.create_model_instance(create_model_instance_request)
+        api_response = api_instance.create_model_instance(create_model_instance_request)
         print("The response of ModelsApi->create_model_instance:\n")
         pprint(api_response)
     except Exception as e:
@@ -402,7 +402,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to delete episode for
@@ -410,7 +410,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Delete an episode for a model
-        api_response = await api_instance.delete_episode(instance_id, episode_name)
+        api_response = api_instance.delete_episode(instance_id, episode_name)
         print("The response of ModelsApi->delete_episode:\n")
         pprint(api_response)
     except Exception as e:
@@ -485,14 +485,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to delete
 
     try:
         # Delete a model instance
-        api_response = await api_instance.delete_model_instance(instance_id)
+        api_response = api_instance.delete_model_instance(instance_id)
         print("The response of ModelsApi->delete_model_instance:\n")
         pprint(api_response)
     except Exception as e:
@@ -565,14 +565,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     model_name = 'model_name_example' # str | Name of the model to retrieve information for (including version identifier if applicable, e.g. \"BetaBernoulli-v1\")
 
     try:
         # Get information about a specific model available for creation
-        api_response = await api_instance.get_available_model(model_name)
+        api_response = api_instance.get_available_model(model_name)
         print("The response of ModelsApi->get_available_model:\n")
         pprint(api_response)
     except Exception as e:
@@ -650,13 +650,13 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
 
     try:
         # Get models available for creation
-        api_response = await api_instance.get_available_models()
+        api_response = api_instance.get_available_models()
         print("The response of ModelsApi->get_available_models:\n")
         pprint(api_response)
     except Exception as e:
@@ -725,7 +725,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to retrieve episode for
@@ -733,7 +733,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Get episode information
-        api_response = await api_instance.get_episode_info(instance_id, episode_name)
+        api_response = api_instance.get_episode_info(instance_id, episode_name)
         print("The response of ModelsApi->get_episode_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -807,14 +807,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to retrieve episodes for
 
     try:
         # Get all episodes for a model instance
-        api_response = await api_instance.get_episodes(instance_id)
+        api_response = api_instance.get_episodes(instance_id)
         print("The response of ModelsApi->get_episodes:\n")
         pprint(api_response)
     except Exception as e:
@@ -887,14 +887,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to retrieve information for
 
     try:
         # Get model instance information
-        api_response = await api_instance.get_model_instance(instance_id)
+        api_response = api_instance.get_model_instance(instance_id)
         print("The response of ModelsApi->get_model_instance:\n")
         pprint(api_response)
     except Exception as e:
@@ -967,14 +967,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | 
 
     try:
         # Get the parameters of a model instance
-        api_response = await api_instance.get_model_instance_parameters(instance_id)
+        api_response = api_instance.get_model_instance_parameters(instance_id)
         print("The response of ModelsApi->get_model_instance_parameters:\n")
         pprint(api_response)
     except Exception as e:
@@ -1048,14 +1048,14 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to retrieve state for
 
     try:
         # Get the state of a model instance
-        api_response = await api_instance.get_model_instance_state(instance_id)
+        api_response = api_instance.get_model_instance_state(instance_id)
         print("The response of ModelsApi->get_model_instance_state:\n")
         pprint(api_response)
     except Exception as e:
@@ -1129,13 +1129,13 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
 
     try:
         # Get all created model instances
-        api_response = await api_instance.get_model_instances()
+        api_response = api_instance.get_model_instances()
         print("The response of ModelsApi->get_model_instances:\n")
         pprint(api_response)
     except Exception as e:
@@ -1205,7 +1205,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to run inference on
@@ -1213,7 +1213,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Run inference
-        api_response = await api_instance.run_inference(instance_id, infer_request)
+        api_response = api_instance.run_inference(instance_id, infer_request)
         print("The response of ModelsApi->run_inference:\n")
         pprint(api_response)
     except Exception as e:
@@ -1288,7 +1288,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | 
@@ -1296,7 +1296,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Learn from previous observations
-        api_response = await api_instance.run_learning(instance_id, learn_request)
+        api_response = api_instance.run_learning(instance_id, learn_request)
         print("The response of ModelsApi->run_learning:\n")
         pprint(api_response)
     except Exception as e:
@@ -1370,7 +1370,7 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ModelsApi(api_client)
     instance_id = 'instance_id_example' # str | ID of the model instance to wipe episode for
@@ -1378,7 +1378,7 @@ async with rxinferclient.ApiClient(configuration) as api_client:
 
     try:
         # Wipe all events from an episode
-        api_response = await api_instance.wipe_episode(instance_id, episode_name)
+        api_response = api_instance.wipe_episode(instance_id, episode_name)
         print("The response of ModelsApi->wipe_episode:\n")
         pprint(api_response)
     except Exception as e:

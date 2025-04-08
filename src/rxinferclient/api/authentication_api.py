@@ -38,7 +38,7 @@ class AuthenticationApi:
 
 
     @validate_call
-    async def token_generate(
+    def token_generate(
         self,
         _request_timeout: Union[
             None,
@@ -90,11 +90,11 @@ class AuthenticationApi:
             '200': "TokenGenerateResponse",
             '400': "ErrorResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -102,7 +102,7 @@ class AuthenticationApi:
 
 
     @validate_call
-    async def token_generate_with_http_info(
+    def token_generate_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -154,11 +154,11 @@ class AuthenticationApi:
             '200': "TokenGenerateResponse",
             '400': "ErrorResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -166,7 +166,7 @@ class AuthenticationApi:
 
 
     @validate_call
-    async def token_generate_without_preload_content(
+    def token_generate_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -218,7 +218,7 @@ class AuthenticationApi:
             '200': "TokenGenerateResponse",
             '400': "ErrorResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -286,7 +286,7 @@ class AuthenticationApi:
 
 
     @validate_call
-    async def token_roles(
+    def token_roles(
         self,
         _request_timeout: Union[
             None,
@@ -338,11 +338,11 @@ class AuthenticationApi:
             '200': "TokenRolesResponse",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -350,7 +350,7 @@ class AuthenticationApi:
 
 
     @validate_call
-    async def token_roles_with_http_info(
+    def token_roles_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -402,11 +402,11 @@ class AuthenticationApi:
             '200': "TokenRolesResponse",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -414,7 +414,7 @@ class AuthenticationApi:
 
 
     @validate_call
-    async def token_roles_without_preload_content(
+    def token_roles_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -466,7 +466,7 @@ class AuthenticationApi:
             '200': "TokenRolesResponse",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

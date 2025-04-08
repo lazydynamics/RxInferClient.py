@@ -42,13 +42,13 @@ configuration = rxinferclient.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ServerApi(api_client)
 
     try:
         # Get server information
-        api_response = await api_instance.get_server_info()
+        api_response = api_instance.get_server_info()
         print("The response of ServerApi->get_server_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -107,13 +107,13 @@ configuration = rxinferclient.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with rxinferclient.ApiClient(configuration) as api_client:
+with rxinferclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rxinferclient.ServerApi(api_client)
 
     try:
         # Health check endpoint
-        api_response = await api_instance.ping_server()
+        api_response = api_instance.ping_server()
         print("The response of ServerApi->ping_server:\n")
         pprint(api_response)
     except Exception as e:

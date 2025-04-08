@@ -38,7 +38,7 @@ class ServerApi:
 
 
     @validate_call
-    async def get_server_info(
+    def get_server_info(
         self,
         _request_timeout: Union[
             None,
@@ -90,11 +90,11 @@ class ServerApi:
             '200': "ServerInfo",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -102,7 +102,7 @@ class ServerApi:
 
 
     @validate_call
-    async def get_server_info_with_http_info(
+    def get_server_info_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -154,11 +154,11 @@ class ServerApi:
             '200': "ServerInfo",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -166,7 +166,7 @@ class ServerApi:
 
 
     @validate_call
-    async def get_server_info_without_preload_content(
+    def get_server_info_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -218,7 +218,7 @@ class ServerApi:
             '200': "ServerInfo",
             '401': "UnauthorizedResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -287,7 +287,7 @@ class ServerApi:
 
 
     @validate_call
-    async def ping_server(
+    def ping_server(
         self,
         _request_timeout: Union[
             None,
@@ -338,11 +338,11 @@ class ServerApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PingResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -350,7 +350,7 @@ class ServerApi:
 
 
     @validate_call
-    async def ping_server_with_http_info(
+    def ping_server_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -401,11 +401,11 @@ class ServerApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PingResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -413,7 +413,7 @@ class ServerApi:
 
 
     @validate_call
-    async def ping_server_without_preload_content(
+    def ping_server_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -464,7 +464,7 @@ class ServerApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PingResponse",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

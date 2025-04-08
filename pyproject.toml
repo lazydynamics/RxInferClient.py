@@ -20,9 +20,7 @@ dependencies = [
   "urllib3 >= 2.1.0, < 3.0.0",
   "python-dateutil >= 2.8.2",
   "pydantic >= 2",
-  "typing-extensions >= 4.7.1",
-  "aiohttp",
-  "aiohttp_retry"
+  "typing-extensions >= 4.7.1"
 ]
 
 [project.optional-dependencies]
@@ -33,6 +31,7 @@ dev = [
   "pytest",
   "pytest-cov",
   "pytest-mock",
+  "pytest-asyncio",
   "black",
   "isort",
   "mkdocs",
@@ -41,7 +40,8 @@ dev = [
   "mkdocs-gen-files",
   "mkdocs-literate-nav",
   "mkdocs-render-swagger-plugin",
-  "pymdown-extensions"
+  "pymdown-extensions",
+  "tenacity"
 ]
 
 [project.urls]
@@ -59,3 +59,6 @@ build-backend = "hatchling.build"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+asyncio_mode = "auto"
+addopts = "-s"
+
