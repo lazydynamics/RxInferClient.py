@@ -42,9 +42,6 @@ plugins:
             docstring_style: google
             docstring_section_style: spacy
             merge_init_into_class: true
-          setup_commands:
-            - import sys
-            - sys.path.append(".")
   - literate-nav
 
 nav:
