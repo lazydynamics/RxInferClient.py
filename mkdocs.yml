@@ -17,6 +17,7 @@ theme:
     - search.suggest
     - content.tabs.link
     - content.code.annotate
+    - content.code.copy
   palette:
     - scheme: default
       primary: indigo
@@ -45,10 +46,16 @@ plugins:
             merge_init_into_class: true
   - literate-nav
   - render_swagger
+  - mkdocs-jupyter:
+      execute: true
+      allow_errors: false
+      show_input: true
 
 nav:
   - Home: index.md
   - Installation: installation.md
+  - Example: 
+    - Learning: examples/learning.ipynb
   # - Usage: usage.md
   # - API Reference: reference/
   - OpenAPI Specification: 
@@ -72,17 +79,19 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.snippets:
+      check_paths: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde 

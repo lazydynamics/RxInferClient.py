@@ -99,8 +99,30 @@ jobs:
     - name: Install dependencies
       run: make install-dev
     
-    - name: Build documentation
-      run: make docs
+    - name: Set up Julia
+      uses: julia-actions/setup-julia@v2
+    
+    - name: Cache Julia packages
+      uses: julia-actions/cache@v2
+    
+    - name: Clone RxInferServer
+      run: |
+        git clone https://github.com/lazydynamics/RxInferServer.git
+        cd RxInferServer
+    
+    - name: Build RxInferServer
+      uses: julia-actions/julia-buildpkg@v1
+    
+    - name: Start RxInferServer in background and build documentation
+      run: |
+        cd RxInferServer
+      
+        make docker
+        make dev &
+
+        cd ..
+
+        make docs
     
     - name: Deploy documentation
       if: github.ref == 'refs/heads/main'

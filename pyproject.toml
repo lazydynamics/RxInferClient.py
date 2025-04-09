@@ -40,8 +40,12 @@ dev = [
   "mkdocs-gen-files",
   "mkdocs-literate-nav",
   "mkdocs-render-swagger-plugin",
+  "mkdocs-jupyter",
   "pymdown-extensions",
-  "tenacity"
+  "tenacity",
+  "matplotlib",
+  "numpy",
+  "ipykernel"
 ]
 
 [project.urls]
