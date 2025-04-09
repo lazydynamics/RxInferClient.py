@@ -12,7 +12,7 @@
 The easiest way to install RxInferClient is using pip:
 
 ```bash
-pip install rxinfer-client
+pip install rxinferclient
 ```
 
 ### From Source
