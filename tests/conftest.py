@@ -2,12 +2,13 @@
 Test configuration and fixtures
 """
 import os
-import time
+import sys
 import pytest
 
-from datetime import datetime, timedelta
-from urllib3.exceptions import HTTPError
-from rxinferclient import RxInferClient
+# Add scripts directory to path to import wait_for_server
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+
+from wait_for_server import wait_for_server # type: ignore
 
 def is_running_in_ci():
     """Check if we're running in a CI environment by looking for common CI environment variables"""
@@ -24,26 +25,7 @@ def is_running_in_ci():
     return any(os.getenv(var) for var in ci_env_vars)
 
 @pytest.fixture(autouse=True, scope="session")
-def wait_for_server():
+def wait_for_server_fixture():
     """Wait for the server to be available before running tests"""
-    # Use longer timeout in CI, shorter locally
-    is_ci = is_running_in_ci()
-    timeout = timedelta(minutes=5) if is_ci else timedelta(seconds=5)
-    retry_interval = 10 if is_ci else 1  # seconds
-    
-    start_time = datetime.now()
-    
-    while datetime.now() - start_time < timeout:
-        try:
-            client = RxInferClient()
-            response = client.server.ping_server()
-            if response.status == 'ok':
-                return  # Server is ready
-        except HTTPError:
-            env_type = "CI" if is_ci else "local"
-            print(f"Waiting for server to be available ({env_type} environment). Will retry in {retry_interval} seconds...")
-            time.sleep(retry_interval)
-    
-    timeout_mins = timeout.total_seconds() / 60
-    env_type = "CI" if is_ci else "local"
-    pytest.fail(f"Server did not become available within {timeout_mins:.1f} minutes ({env_type} environment)")
+    if not wait_for_server():
+        pytest.fail("Server did not become available within the timeout period")
