@@ -2,130 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/installation/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/swagger-ui/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/AttachEventsToEpisodeRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/AttachEventsToEpisodeRequestEventsInner/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/AttachMetadataToEventRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/AuthenticationApi/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/AvailableModel/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/AvailableModelDetails/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/CreateEpisodeRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/CreateModelInstanceRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/CreateModelInstanceResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/DeleteModelInstanceRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/EpisodeInfo/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ErrorResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/InferRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/InferResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/LearnRequest/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/LearnResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ModelInstance/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ModelInstanceParameters/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ModelInstanceState/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ModelsApi/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/NotFoundResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/PingResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ServerApi/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/ServerInfo/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/SuccessResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/TokenGenerateResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/TokenRolesResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://lazydynamics.github.io/RxInferClient.py/openapi/docs/UnauthorizedResponse/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
 </urlset>
