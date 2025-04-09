@@ -19,7 +19,7 @@ This python library package is generated without supporting files like setup.py 
 
 To be able to use it, you will need these dependencies in your own package that uses this library:
 
-* urllib3 >= 2.1.0, < 3.0.0
+* urllib3 >= 1.25.3, < 3.0.0
 * python-dateutil >= 2.8.2
 * pydantic >= 2
 * typing-extensions >= 4.7.1

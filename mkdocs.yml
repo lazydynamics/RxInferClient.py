@@ -6,6 +6,8 @@ site_url: https://lazydynamics.github.io/RxInferClient.py/
 repo_name: lazydynamics/RxInferClient.py
 repo_url: https://github.com/lazydynamics/RxInferClient.py
 
+dev_addr: 127.0.0.1:8001
+
 theme:
   name: material
   features:
@@ -17,6 +19,7 @@ theme:
     - search.suggest
     - content.tabs.link
     - content.code.annotate
+    - content.code.copy
   palette:
     - scheme: default
       primary: indigo
@@ -45,10 +48,16 @@ plugins:
             merge_init_into_class: true
   - literate-nav
   - render_swagger
+  - mkdocs-jupyter:
+      execute: true
+      allow_errors: false
+      show_input: true
 
 nav:
   - Home: index.md
   - Installation: installation.md
+  - Examples: 
+    - State Space Model: examples/state-space-model.ipynb
   # - Usage: usage.md
   # - API Reference: reference/
   - OpenAPI Specification: 
@@ -72,17 +81,19 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.snippets:
+      check_paths: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde 

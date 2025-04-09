@@ -86,17 +86,21 @@ clean:
 ## Run tests
 test:
 	@echo "${GREEN}Running tests...${RESET}"
+	@python scripts/wait_for_server.py
 	@pytest tests/
+	@echo "${GREEN}Tests completed successfully!${RESET}"
 
 ## Build documentation
 docs:
 	@echo "${GREEN}Building documentation...${RESET}"
+	@python scripts/wait_for_server.py
 	@mkdocs build --strict
 	@echo "${GREEN}Documentation built successfully!${RESET}"
 
 ## Serve documentation locally
 docs-serve:
 	@echo "${GREEN}Serving documentation locally...${RESET}"
+	@python scripts/wait_for_server.py
 	@mkdocs serve
 
 ## Clean documentation build
