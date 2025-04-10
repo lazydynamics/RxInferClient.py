@@ -51,7 +51,11 @@ plugins:
   - mkdocs-jupyter:
       execute: true
       allow_errors: false
-      show_input: true
+      show_input: true # show code
+      no_input: false  # do not show Jupyter ids, e.g. `In [1]`
+
+extra_css:
+  - assets/jupyter.css
 
 nav:
   - Home: index.md
